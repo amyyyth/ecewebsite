@@ -8,6 +8,15 @@ a {
   text-decoration: none;
 }
 
+ul{
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  padding-bottom: 5px;
+}
+
 html,
 body {
   margin: 0px 0px 0px 0px;
@@ -23,6 +32,7 @@ body {
   background-size: cover;
   background-image: url('data:image/svg+xml;utf8,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 50" enable-background="new" xml:space="preserve"><polygon points="0,0 0,20 100,40 100,0" style="fill:rgb(178,223,219)"/></svg>');
 }
+
 #carsa {
   box-shadow: 0px 10px 5px gray;
 }
@@ -32,30 +42,25 @@ body {
   color: #fffff0;
 }
 
-#qlinksindex {
-  padding-bottom: 20px;
-}
-
 #newsindex {
   padding-top: 20px;
 }
 
 #lmain {
-  margin-left: 40px;
   margin-right: 20px;
-  width: 70%;
+  width: 68%;
 }
 
 #rmain {
   margin-left: 20px;
-  margin-right: 40px;
-  width: 30%;
+  width: 28%;
 }
 
 #mobdepro {
   margin-left: 10px;
   margin-right: 10px;
   margin-top: 10px;
+  padding-bottom: 10px;
 }
 
 #mv {

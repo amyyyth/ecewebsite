@@ -8,7 +8,11 @@ export default function Primaryqlinks() {
     <Card id="qlinksa">
       <CardContent>
         <Typography variant="h3">Quick Links</Typography>
-        <a href="http://nic.ac.in/">NITC Home Page</a>
+          <ul>
+            <li><a href="http://nitc.ac.in/">NITC Home Page</a></li>
+            <li><a href="http://nitc.ac.in/">Academic Calender</a></li>
+            <li><a href="http://nitc.ac.in/">Hostel</a></li>
+          </ul>
       </CardContent>
     </Card>
   );

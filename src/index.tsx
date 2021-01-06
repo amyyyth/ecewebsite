@@ -3,14 +3,21 @@ import { render } from "react-dom";
 import "./style.css";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
-import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import { isMobile } from "react-device-detect";
+import Container from '@material-ui/core/Container';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 import PrimaryNavBar from "./NavigBar/Nvgbar";
 import PrimaryCarousel from "./Carouselfold/CarouselComp";
 import PrimaryDepro from "./DepProfold/Depro";
 import Primaryqlinks from "./Qlinksfold/Qlinks";
 import Primarynews from "./Newsfold/Newsindex";
+import Newspagecomp from "./Newsfold/Newspage";
 import Primarymv from "./Mandvfold/MandV";
 import MobileNavBar from "./NavigBar/Mobnvgbar";
 import Primaryfooter from "./Footerfold/Footer";
@@ -29,6 +36,9 @@ const theme = createMuiTheme({
     },
     secondary: {
       main: "#fffff0"
+    },
+    text: {
+      primary: "#03205c"
     }
   }
 });
@@ -41,6 +51,40 @@ class App extends Component<AppProps, AppState> {
     this.state = {
       name: "React"
     };
+  }
+
+  indexpage = () => {
+    return (
+      <div>
+        <div id="carsa">
+          <PrimaryCarousel />
+        </div>
+
+        <div id="botcardsa">
+
+          <Container style={{ marginLeft: "40px", marginRight: "40px", display: "flex"}}>
+            <div id="lmain">
+              <PrimaryDepro />
+            </div>
+            <div id="rmain">
+              <div>
+                <Primaryqlinks />
+              </div>
+              <div id="newsindex">
+                <Primarynews />
+              </div>
+            </div>
+          </Container>
+
+          <div id="mv">
+            <Box display="flex">
+              <Primarymv />
+            </Box>
+          </div>
+
+        </div>
+      </div>
+    );
   }
 
   renderChoose = () => {
@@ -57,33 +101,20 @@ class App extends Component<AppProps, AppState> {
       );
     } else {
       return (
-        <div id="bg" style={{ width: "100%" }}>
-          <PrimaryNavBar />
-          <div id="carsa">
-            <PrimaryCarousel />
+        <Router>
+          <div id="bg" style={{ width: "100%" }}>
+            <PrimaryNavBar />
+              <Switch>
+                <Route path="/news">
+                  <Newspagecomp />
+                </Route>
+                <Route path="/">
+                  {this.indexpage()}
+                </Route>
+              </Switch>
+            <Primaryfooter />
           </div>
-          <div id="botcardsa">
-            <Box display="flex">
-              <div id="lmain">
-                <PrimaryDepro />
-              </div>
-              <div id="rmain">
-                <div id="qlinksindex">
-                  <Primaryqlinks />
-                </div>
-                <div id="newsindex">
-                  <Primarynews />
-                </div>
-              </div>
-            </Box>
-            <div id="mv">
-              <Box display="flex">
-                <Primarymv />
-              </Box>
-            </div>
-          </div>
-          <Primaryfooter />
-        </div>
+        </Router>
       );
     }
   };

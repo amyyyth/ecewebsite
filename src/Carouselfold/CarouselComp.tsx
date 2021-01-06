@@ -1,4 +1,4 @@
-import React,{ Component } from "react";
+import { Component } from "react";
 import { CarouselProvider, Slider, Slide } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 
@@ -18,7 +18,7 @@ export default class PrimaryCarousel extends Component<AppProps,AppState> {
   };
 
   componentDidMount(){
-    fetch('http://localhost:8000/carousel/getimages/',
+    fetch('http://localhost:8000/backend/carousel/getimages/',
       {method: 'GET'}
     ).then(
       response => response.json()
