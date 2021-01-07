@@ -42,7 +42,7 @@ export default class Newspagecomp extends Component<AppProps,AppState> {
   render() {
     return (
       <div>
-        <h1 style={{ paddingLeft: "40px", paddingTop: "40px" }}>
+        <h1 style={{ paddingLeft: "40px", paddingTop: "40px", color: "#03205c" }}>
           NEWS
         </h1>
         <Container style={{ marginLeft: "40px", marginRight: "40px", marginBottom: "40px" }}>
@@ -51,7 +51,7 @@ export default class Newspagecomp extends Component<AppProps,AppState> {
               function(obj,index){
                 return (
                   <div style={{ paddingTop: "20px" }}>
-                    <Card style={{ backgroundColor: "#fff"}}>
+                    <Card className="pdbga">
                       <CardContent>
                         <Container style={{ display: "flex", justifyContent: "space-between" }}>
                           <h2>{obj.heading}</h2>

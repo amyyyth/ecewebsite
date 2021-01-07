@@ -7,6 +7,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
+import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -93,13 +94,23 @@ export default function PrimaryNavBar() {
                     elevation={0}
                     getContentAnchorEl={null}
                   >
-                    <MenuItem onClick={handleClose(setAnchorEl1)}>
-                      B.Tech
-                    </MenuItem>
-                    <MenuItem onClick={handleClose(setAnchorEl1)}>
-                      M.Tech
-                    </MenuItem>
-                    <MenuItem onClick={handleClose(setAnchorEl1)}>PhD</MenuItem>
+                    <a href="/btech" style={{ color: "#03205c" }}>
+                      <MenuItem onClick={handleClose(setAnchorEl1)}>
+                        B.Tech
+                      </MenuItem>
+                    </a>
+                    <Divider />
+                    <a href="/mtech" style={{ color: "#03205c" }}>
+                      <MenuItem onClick={handleClose(setAnchorEl1)}>
+                        M.Tech
+                      </MenuItem>
+                    </a>
+                    <Divider />
+                    <a href="/phd" style={{ color: "#03205c" }}>
+                      <MenuItem onClick={handleClose(setAnchorEl1)}>
+                        PhD
+                      </MenuItem>
+                    </a>
                   </Menu>
                 </div>
 
@@ -132,9 +143,11 @@ export default function PrimaryNavBar() {
                     <MenuItem onClick={handleClose(setAnchorEl2)}>
                       FACULTY MEMBERS
                     </MenuItem>
+                    <Divider />
                     <MenuItem onClick={handleClose(setAnchorEl2)}>
                       STAFF
                     </MenuItem>
+                    <Divider />
                     <MenuItem onClick={handleClose(setAnchorEl2)}>
                       ADHOC
                     </MenuItem>
@@ -170,9 +183,11 @@ export default function PrimaryNavBar() {
                     <MenuItem onClick={handleClose(setAnchorEl3)}>
                       AREAS OF RESEARCH
                     </MenuItem>
+                    <Divider />
                     <MenuItem onClick={handleClose(setAnchorEl3)}>
                       ONGOING
                     </MenuItem>
+                    <Divider />
                     <MenuItem onClick={handleClose(setAnchorEl3)}>
                       Lorem{" "}
                     </MenuItem>
@@ -208,12 +223,47 @@ export default function PrimaryNavBar() {
                     <MenuItem onClick={handleClose(setAnchorEl4)}>
                       lore
                     </MenuItem>
+                    <Divider />
                     <MenuItem onClick={handleClose(setAnchorEl4)}>
                       m ipsem
                     </MenuItem>
                     <MenuItem onClick={handleClose(setAnchorEl4)}>as</MenuItem>
                   </Menu>
                 </div>
+
+                <div>
+                  <Button
+                    aria-controls="simple-menu"
+                    aria-haspopup="true"
+                    onClick={handleClick(setAnchorEl3)}
+                    color="secondary"
+                  >
+                    ACTIVITIES
+                  </Button>
+                </div>
+
+                <div>
+                  <Button
+                    aria-controls="simple-menu"
+                    aria-haspopup="true"
+                    onClick={handleClick(setAnchorEl3)}
+                    color="secondary"
+                  >
+                    ALUMNI
+                  </Button>
+                </div>
+
+                <div>
+                  <Button
+                    aria-controls="simple-menu"
+                    aria-haspopup="true"
+                    onClick={handleClick(setAnchorEl3)}
+                    color="secondary"
+                  >
+                    ECEA
+                  </Button>
+                </div>
+
               </Box>
             </div>
           </div>
