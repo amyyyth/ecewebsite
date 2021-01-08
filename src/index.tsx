@@ -21,6 +21,7 @@ import Newspagecomp from "./Newsfold/Newspage";
 import Primarymv from "./Mandvfold/MandV";
 import MobileNavBar from "./NavigBar/Mobnvgbar";
 import Primaryfooter from "./Footerfold/Footer";
+import Academics from "./Academicsfold/Acadpage";
 
 interface AppProps {}
 interface AppState {
@@ -107,6 +108,15 @@ class App extends Component<AppProps, AppState> {
               <Switch>
                 <Route path="/news">
                   <Newspagecomp />
+                </Route>
+                <Route path="/btech">
+                  <Academics heading="B Tech" acadurl="btech" />
+                </Route>
+                <Route path="/mtech">
+                  <Academics heading="M Tech" acadurl="mtech" />
+                </Route>
+                <Route path="/phd">
+                  <Academics heading="PhD" acadurl="phd" />
                 </Route>
                 <Route path="/">
                   {this.indexpage()}
