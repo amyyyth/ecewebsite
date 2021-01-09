@@ -1,6 +1,4 @@
 import { Component } from "react";
-import ReactQuill from 'react-quill';
-import "react-quill/dist/quill.snow.css";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Container from '@material-ui/core/Container';
@@ -21,9 +19,10 @@ export default class Academics extends Component<AppProps,AppState> {
     super(props);
     this.state = {
         apidata: {
-            data: '{"ops":[{"insert":"Loading... Please wait.\\n"}]}'
+            data: '<p>Loading... Please wait...</p>'
         }
-    }};
+    };
+  };
 
   componentDidMount(){
     fetch('http://localhost:8000/backend/academics/getacad/'+this.props.acadurl+'/',
@@ -45,10 +44,9 @@ export default class Academics extends Component<AppProps,AppState> {
             <div style={{ paddingTop: "20px" }}>
                 <Card className="pdbga">
                     <CardContent>
-                        <ReactQuill 
-                        value={JSON.parse(this.state.apidata.data)} 
-                        modules={{ toolbar: false }}
-                        readOnly={true} />
+                        <div className={ "ql-container ql-snow" }>
+                          <div className={ "ql-editor" } dangerouslySetInnerHTML={{ __html: this.state.apidata.data }}></div>
+                        </div>
                     </CardContent>
                 </Card>
             </div>

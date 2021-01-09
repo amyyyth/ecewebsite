@@ -8,10 +8,10 @@ import Container from '@material-ui/core/Container';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
+import "./quill.snow.min.css";
 import PrimaryNavBar from "./NavigBar/Nvgbar";
 import PrimaryCarousel from "./Carouselfold/CarouselComp";
 import PrimaryDepro from "./DepProfold/Depro";
@@ -22,6 +22,7 @@ import Primarymv from "./Mandvfold/MandV";
 import MobileNavBar from "./NavigBar/Mobnvgbar";
 import Primaryfooter from "./Footerfold/Footer";
 import Academics from "./Academicsfold/Acadpage";
+import Facultyapp from "./Facultiesfold/Facultypage";
 
 interface AppProps {}
 interface AppState {
@@ -39,7 +40,7 @@ const theme = createMuiTheme({
       main: "#fffff0"
     },
     text: {
-      primary: "#03205c"
+      primary: "#26a69a"
     }
   }
 });
@@ -97,6 +98,15 @@ class App extends Component<AppProps, AppState> {
             <div id="mobdepro">
               <PrimaryDepro />
             </div>
+            <div id="newsindex">
+                <Primarynews />
+            </div>
+            <div id="mv">
+              <Box display="flex">
+                <Primarymv />
+              </Box>
+            </div>
+            <Primaryfooter />
           </div>
         </div>
       );
@@ -117,6 +127,9 @@ class App extends Component<AppProps, AppState> {
                 </Route>
                 <Route path="/phd">
                   <Academics heading="PhD" acadurl="phd" />
+                </Route>
+                <Route path="/faculty">
+                  <Facultyapp />
                 </Route>
                 <Route path="/">
                   {this.indexpage()}

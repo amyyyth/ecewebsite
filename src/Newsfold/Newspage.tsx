@@ -1,6 +1,4 @@
 import { Component } from "react";
-import ReactQuill from 'react-quill';
-import "react-quill/dist/quill.snow.css";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Container from '@material-ui/core/Container';
@@ -23,11 +21,12 @@ export default class Newspagecomp extends Component<AppProps,AppState> {
         apidata: {
             data: [{
                 heading: 'Loading...',
-                newsops: '{"ops":[{"insert":"Loading... Please wait.\\n"}]}',
+                newsops: '<p>Loading... Please wait...</p>',
                 date_uploaded: 'loading...'
             }]
         }
-    }};
+    };
+  };
 
   componentDidMount(){
     fetch('http://localhost:8000/backend/newsblog/getnews/1/',
@@ -57,10 +56,9 @@ export default class Newspagecomp extends Component<AppProps,AppState> {
                           <h2>{obj.heading}</h2>
                           <p style={{ fontSize: "10px" }}>Published on: { obj.date_uploaded.replace('T',' ').slice(0,19) }</p>
                         </Container>
-                        <ReactQuill 
-                        value={JSON.parse(obj.newsops)} 
-                        modules={{ toolbar: false }}
-                        readOnly={true} />
+                        <div className={ "ql-container ql-snow" }>
+                          <div className={ "ql-editor" } dangerouslySetInnerHTML={{ __html: obj.newsops }}></div>
+                        </div>
                       </CardContent>
                     </Card>
                   </div>
