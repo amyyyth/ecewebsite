@@ -5,8 +5,12 @@ Setup guide
 1. Fork this repository.
 2. Install git on your system then run the following commands in command prompt or terminal
 ```
-git clone <replace_this_with_git_url>
+git clone <replace_this_with_your_git_repo_url>
 cd ecewebsite
+git remote add upstream https://github.com/JARUS-5/ecewebsite.git
+git pull upstream
+git merge upstream/master
+git push
 npm install
 npm start
 ```
@@ -19,6 +23,12 @@ git commit -m "replace this with your message"
 git push
 ```
 7. Send me a pull request
+
+Use the following commands to update your repository with latest main repository
+'''
+git pull upstream
+git merge upstream/master
+'''
 
 ### `npm start`
 
