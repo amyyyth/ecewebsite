@@ -63,7 +63,7 @@ class App extends Component<AppProps, AppState> {
 
         <div id="botcardsa">
 
-          <Container style={{ marginLeft: "40px", marginRight: "40px", display: "flex"}}>
+          <Container style={{  display: "flex"}}>
             <div id="lmain">
               <PrimaryDepro />
             </div>
@@ -76,12 +76,13 @@ class App extends Component<AppProps, AppState> {
               </div>
             </div>
           </Container>
-
-          <div id="mv">
+          <Container style={{  display: "flex", marginTop:"25px"}}>
+          <div>
             <Box display="flex">
               <Primarymv />
             </Box>
           </div>
+          </Container>
 
         </div>
       </div>
