@@ -31,14 +31,14 @@ export default class Primarynews extends Component<AppProps,AppState> {
 
   render() {
     return (
-      <Card id="qlinksa">
-        <CardContent>
-          <Typography variant="h3">NEWS</Typography>
+      <Card id="qlinksa" style={{padding:"15px"}}>
+        <CardContent style={{fontFamily:"Karla,sans-serif"}}>
+        <Typography variant="h4" style={{fontFamily:"Montserrat,sans-serif",fontWeight:"bolder",marginBottom:"15px"}}>NEWS</Typography>
             <ul>
             {
               this.state.apidata.data.map(
                 function (obj,index){
-                  return (<li><a href="/news">{obj.heading}</a></li>);
+                  return (<li><a href="/news"><Typography variant="h6">{obj.heading}</Typography></a></li>);
                 }
               )
             }
