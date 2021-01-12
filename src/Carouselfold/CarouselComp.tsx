@@ -41,7 +41,12 @@ export default class PrimaryCarousel extends Component<AppProps,AppState> {
         <Slider>
           {
             this.state.imgs.cimgs.map(function(objs,index){
-              return (<Slide index={index}><img width={"100%"} src={objs.img} /></Slide>)
+              return (
+                <Slide index={index}>
+                  <div style={{ height: "50vh" }}>
+                    <img height={"100%"} width={"100%"} src={objs.img} />                
+                  </div>
+                </Slide>)
             })
           }         
         </Slider>

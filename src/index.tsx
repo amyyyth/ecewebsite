@@ -23,6 +23,7 @@ import MobileNavBar from "./NavigBar/Mobnvgbar";
 import Primaryfooter from "./Footerfold/Footer";
 import Academics from "./Academicsfold/Acadpage";
 import Facultyapp from "./Facultiesfold/Facultypage";
+import Workshops_page from "./Labsfold/Labslistpage";
 
 interface AppProps {}
 interface AppState {
@@ -131,6 +132,9 @@ class App extends Component<AppProps, AppState> {
                 </Route>
                 <Route path="/faculty">
                   <Facultyapp />
+                </Route>
+                <Route path="/labs">
+                  <Workshops_page />
                 </Route>
                 <Route path="/">
                   {this.indexpage()}
