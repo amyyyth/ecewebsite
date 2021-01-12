@@ -10,7 +10,7 @@ cd ecewebsite
 git remote add upstream https://github.com/JARUS-5/ecewebsite.git
 git pull upstream
 git merge upstream/master
-git push origin master
+git push
 npm install
 npm start
 ```
@@ -20,7 +20,7 @@ npm start
 ```
 git add .
 git commit -m "replace this with your message"
-git push origin master
+git push
 ```
 7. Send me a pull request
 

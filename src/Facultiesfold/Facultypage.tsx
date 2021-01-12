@@ -223,7 +223,7 @@ export default function Facultyapp() {
     },
     {
       id: 1,
-      Name: "One",
+      Name: "Dr. One",
       Email: "facultyone@nitc.ac.in",
       Phone: "9458523617",
       Details:
@@ -231,7 +231,7 @@ export default function Facultyapp() {
     },
     {
       id: 2,
-      Name: "Two",
+      Name: "Dr. Two",
       Email: "facultyone@nitc.ac.in",
       Phone: "9458523617",
       Details:
@@ -239,7 +239,7 @@ export default function Facultyapp() {
     },
     {
       id: 3,
-      Name: "Three",
+      Name: "Mr. Three",
       Email: "facultyone@nitc.ac.in",
       Phone: "9458523617",
       Details:
