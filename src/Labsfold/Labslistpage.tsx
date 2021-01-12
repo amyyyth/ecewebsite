@@ -9,14 +9,8 @@ export default function Workshops_page() {
   return (
     <Container className="maincontainer">
       <Card className="imageplaceholder">
-        <CardContent>
-          //{" "}
-          <Typography gutterBottom>
-            // image //{" "}
-          </Typography>
-        </CardContent>
-        <CardActions />
-      </Card>
+          <img height="100%" src="https://lh3.googleusercontent.com/proxy/OzDAbpL93wo7FEU2uaOjWv9ekwUSs-qASbfhL07GO8Rqfl8ImsY8smRLwFb3R3fG8xNdEKfVDxVqlDbmn5HJmdJta6VzPNRxMa9y_8Non0E3k9hKOsEJ7Os" alt="someImg" ></img>
+          </Card>
       <Card className="contentplaceholder">
         <CardContent>
           <Container>

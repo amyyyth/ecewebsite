@@ -18,6 +18,10 @@ import TableRow from "@material-ui/core/TableRow";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import { useMediaQuery } from "react-responsive";
+import Accordion from "@material-ui/core/Accordion";
+import AccordionSummary from "@material-ui/core/AccordionSummary";
+import AccordionDetails from "@material-ui/core/AccordionDetails";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import "./faculty.css";
 
 interface FacultyDetails {
@@ -53,44 +57,39 @@ interface topass {
   details: FacultyDetails[]
 }
 
-function Row(props: Section) {
-  const [open, setOpen] = React.useState(false);
-  return (
-  <React.Fragment>
-    <TableRow>
-      <TableCell>
-        <IconButton
-          aria-label="expand row"
-          size="small"
-          onClick={() => setOpen(!open)}
-        >
-          {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-        </IconButton>
-      </TableCell>
-      <TableCell component="th" scope="row">
-        {props.heading}
-      </TableCell>
-    </TableRow>
-    <TableRow>
-      <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
-        <Collapse in={open} timeout="auto" unmountOnExit>
-          <Box margin={1}>
-            <Card>
-              <CardContent>
-                <div className={ "ql-container ql-snow" }>
-                  <div className={ "ql-editor" } dangerouslySetInnerHTML={{ __html: props.descops }}></div>
-                </div>
-              </CardContent>
-            </Card>
-          </Box>
-        </Collapse>
-      </TableCell>
-    </TableRow>
-  </React.Fragment>
-  );
-}
-
 function RightCard(faculty: FacultyDetails) {
+  function showcards(cards: Section[] | undefined){
+    if (cards) {
+      return(
+        cards.map(function(pobj,index){
+          return (
+            <Container style={{ paddingLeft: "0px", paddingRight:"0px" }}>
+            <div>
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <h3>{ pobj.heading }</h3>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <div className={ "ql-container ql-snow" }>
+                    <div className={ "ql-editor" } dangerouslySetInnerHTML={{ __html: pobj.descops }}></div>
+                  </div>
+                </AccordionDetails>
+              </Accordion>
+            </div>
+            </Container>
+          );
+        })
+      )
+    }
+    else{
+      return (<p><br></br></p>)
+    }
+    
+  }
   return (
   <Card variant="outlined">
     <CardContent>
@@ -157,13 +156,7 @@ function RightCard(faculty: FacultyDetails) {
           </TableBody>
         </Table>
       </TableContainer>
-      <TableContainer>
-        <Table aria-label="collapsible table">
-          <TableBody>
-            <p>Need to change</p>
-          </TableBody>
-        </Table>
-      </TableContainer>
+      {showcards(faculty.cards)}
     </CardContent>
   </Card>
   );
@@ -191,12 +184,11 @@ function LeftTabCard(faculty: FacultyDetails) {
       >
         <CardContent style={{ padding: "5px" }}>
           <div style={{ display: "flex", flexDirection: "row" }}>
-            <CardMedia><img src={faculty.profile_pic} style={{ width: "100px" }} alt={"Faculty"} /></CardMedia>
+            <CardMedia><img src={faculty.profile_pic} style={{ height: "100px" }} alt={"Faculty"} /></CardMedia>
             <div>
               <TableContainer>
                 <Table aria-label="simple table">
                   <TableRow>
-                    <TableCell component="th" scope="row"><Typography variant="h6"> Name </Typography></TableCell>
                     <TableCell align="left">
                       {" "}
                       <Typography variant="h6"> {faculty.display_name} </Typography>
@@ -204,28 +196,18 @@ function LeftTabCard(faculty: FacultyDetails) {
                   </TableRow>
                   <TableBody>
                     <TableRow>
-                      <TableCell component="th" scope="row"><Typography variant="h6"> Designation </Typography></TableCell>
                       <TableCell align="left">
                         {" "}
                         <Typography variant="h6"> {faculty.designation} </Typography>
                       </TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell component="th" scope="row"><Typography variant="h6"> Room </Typography></TableCell>
-                      <TableCell align="left">
-                        {" "}
-                        <Typography variant="h6"> {faculty.room} </Typography>
-                      </TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell component="th" scope="row"><Typography variant="h6"> Email </Typography></TableCell>
                       <TableCell align="left">
                         {" "}
                         <Typography variant="h6"> {faculty.email} </Typography>
                       </TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell component="th" scope="row"><Typography variant="h6"> Phone </Typography></TableCell>
                       <TableCell align="left">
                         {" "}
                         <Typography variant="h6"> {faculty.phone} </Typography>
