@@ -2,12 +2,12 @@ import React from "react";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
-import Divider from "@material-ui/core/Divider";
+import Divider from '@material-ui/core/Divider';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -151,9 +151,11 @@ export default function PrimaryNavBar() {
                     elevation={0}
                     getContentAnchorEl={null}
                   >
-                    <MenuItem onClick={handleClose(setAnchorEl2)}>
-                      FACULTY MEMBERS
-                    </MenuItem>
+                    <a href="/faculty" style={{ color: "#03205c" }}>
+                      <MenuItem onClick={handleClose(setAnchorEl2)}>
+                        FACULTY
+                      </MenuItem>
+                    </a>
                     <Divider />
                     <MenuItem onClick={handleClose(setAnchorEl2)}>
                       STAFF
@@ -277,6 +279,17 @@ export default function PrimaryNavBar() {
                     className={classes.navButton}
                   >
                     ECEA
+                  </Button>
+                </div>
+
+                <div>
+                  <Button
+                    aria-controls="simple-menu"
+                    aria-haspopup="true"
+                    onClick={handleClick(setAnchorEl3)}
+                    color="secondary"
+                  >
+                    <a href="http://localhost:8000/backend/people/login/"><AccountCircleIcon /></a>
                   </Button>
                 </div>
               </Box>
