@@ -14,19 +14,28 @@ const useStyles = makeStyles((theme: Theme) =>
     nitc: {
       marginTop: "0px",
       marginBottom: "0px",
-      size: "20px"
+      size: "20px",
+      fontSize: "18px",
+      fontWeight: "lighter",
+      fontFamily: "Karla,sans-serif",
     },
     logo: {
       height: "100px",
-      filter: "invert(100%)"
+      filter: "invert(100%)",
     },
     groupa: {
       paddingLeft: "24px",
-      width: "100%"
+      width: "100%",
     },
     headinga: {
-      marginBottom: "5px"
-    }
+      marginBottom: "5px",
+      fontFamily: "Montserrat,sans-serif",
+    },
+    navButton: {
+      fontFamily: "Karla,sans-serif",
+      fontWeight: "bolder",
+      fontSize: "12px",
+    },
   })
 );
 
@@ -74,6 +83,7 @@ export default function PrimaryNavBar() {
                     aria-haspopup="true"
                     onClick={handleClick(setAnchorEl1)}
                     color="secondary"
+                    className={classes.navButton}
                   >
                     PROGRAMMES
                   </Button>
@@ -85,11 +95,11 @@ export default function PrimaryNavBar() {
                     onClose={handleClose(setAnchorEl1)}
                     anchorOrigin={{
                       vertical: "bottom",
-                      horizontal: "center"
+                      horizontal: "center",
                     }}
                     transformOrigin={{
                       vertical: "top",
-                      horizontal: "center"
+                      horizontal: "center",
                     }}
                     elevation={0}
                     getContentAnchorEl={null}
@@ -120,6 +130,7 @@ export default function PrimaryNavBar() {
                     aria-haspopup="true"
                     onClick={handleClick(setAnchorEl2)}
                     color="secondary"
+                    className={classes.navButton}
                   >
                     PEOPLE
                   </Button>
@@ -131,11 +142,11 @@ export default function PrimaryNavBar() {
                     onClose={handleClose(setAnchorEl2)}
                     anchorOrigin={{
                       vertical: "bottom",
-                      horizontal: "center"
+                      horizontal: "center",
                     }}
                     transformOrigin={{
                       vertical: "top",
-                      horizontal: "center"
+                      horizontal: "center",
                     }}
                     elevation={0}
                     getContentAnchorEl={null}
@@ -162,6 +173,7 @@ export default function PrimaryNavBar() {
                     aria-haspopup="true"
                     onClick={handleClick(setAnchorEl3)}
                     color="secondary"
+                    className={classes.navButton}
                   >
                     RESEARCH
                   </Button>
@@ -173,11 +185,11 @@ export default function PrimaryNavBar() {
                     onClose={handleClose(setAnchorEl3)}
                     anchorOrigin={{
                       vertical: "bottom",
-                      horizontal: "center"
+                      horizontal: "center",
                     }}
                     transformOrigin={{
                       vertical: "top",
-                      horizontal: "center"
+                      horizontal: "center",
                     }}
                     elevation={0}
                     getContentAnchorEl={null}
@@ -202,6 +214,7 @@ export default function PrimaryNavBar() {
                     aria-haspopup="true"
                     onClick={handleClick(setAnchorEl4)}
                     color="secondary"
+                    className={classes.navButton}
                   >
                     FACILITIES
                   </Button>
@@ -213,11 +226,11 @@ export default function PrimaryNavBar() {
                     onClose={handleClose(setAnchorEl4)}
                     anchorOrigin={{
                       vertical: "bottom",
-                      horizontal: "center"
+                      horizontal: "center",
                     }}
                     transformOrigin={{
                       vertical: "top",
-                      horizontal: "center"
+                      horizontal: "center",
                     }}
                     elevation={0}
                     getContentAnchorEl={null}
@@ -239,6 +252,7 @@ export default function PrimaryNavBar() {
                     aria-haspopup="true"
                     onClick={handleClick(setAnchorEl3)}
                     color="secondary"
+                    className={classes.navButton}
                   >
                     ACTIVITIES
                   </Button>
@@ -250,6 +264,7 @@ export default function PrimaryNavBar() {
                     aria-haspopup="true"
                     onClick={handleClick(setAnchorEl3)}
                     color="secondary"
+                    className={classes.navButton}
                   >
                     ALUMNI
                   </Button>
@@ -261,6 +276,7 @@ export default function PrimaryNavBar() {
                     aria-haspopup="true"
                     onClick={handleClick(setAnchorEl3)}
                     color="secondary"
+                    className={classes.navButton}
                   >
                     ECEA
                   </Button>
@@ -276,7 +292,6 @@ export default function PrimaryNavBar() {
                     <a href="http://localhost:8000/backend/people/login/"><AccountCircleIcon /></a>
                   </Button>
                 </div>
-
               </Box>
             </div>
           </div>

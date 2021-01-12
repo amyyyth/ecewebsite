@@ -8,8 +8,8 @@ export default function PrimaryDepro() {
   return (
     <Card className="pdbga">
       <CardContent>
-        <Typography variant="h3">Department Profile</Typography>
-        <p>
+        <Typography variant="h3" style={{fontFamily:"Karla,sans-serif"}}>DEPARTMENT PROFILE</Typography>
+        <Typography variant="h6" style={{fontFamily:"Montserrat,sans-serif",marginTop:"5vh"}}>
           The Department of Electronics and Communication Engineering, National
           Institute of Technology, Calicut, is involved in providing quality
           education at both Undergraduate (UG) and Postgraduate (PG) levels. UG
@@ -25,7 +25,7 @@ export default function PrimaryDepro() {
           updated and the laboratories modernized to reflect the rapid changes
           in technology. It also offers high quality research programmes at
           Ph.D. level in a variety of areas.
-        </p>
+        </Typography>
       </CardContent>
     </Card>
   );
