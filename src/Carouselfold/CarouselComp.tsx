@@ -18,7 +18,7 @@ export default class PrimaryCarousel extends Component<AppProps,AppState> {
   };
 
   componentDidMount(){
-    fetch('http://localhost:8000/backend/carousel/getimages/',
+    fetch('https://eced.herokuapp.com/backend/carousel/getimages/',
       {method: 'GET'}
     ).then(
       response => response.json()

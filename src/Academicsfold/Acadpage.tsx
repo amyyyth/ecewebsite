@@ -25,7 +25,7 @@ export default class Academics extends Component<AppProps,AppState> {
   };
 
   componentDidMount(){
-    fetch('http://localhost:8000/backend/academics/getacad/'+this.props.acadurl+'/',
+    fetch('https://eced.herokuapp.com/backend/academics/getacad/'+this.props.acadurl+'/',
       {method: 'GET'}
     ).then(
       response => response.json()

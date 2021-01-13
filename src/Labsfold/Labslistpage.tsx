@@ -38,7 +38,7 @@ class Labslistclass extends Component<AppProps,AppState> {
   };
 
   componentDidMount(){
-    fetch('http://localhost:8000/backend/labs/reqlabls/',
+    fetch('https://eced.herokuapp.com/backend/labs/reqlabls/',
       {method: 'GET'}
     ).then(
       response => response.json()

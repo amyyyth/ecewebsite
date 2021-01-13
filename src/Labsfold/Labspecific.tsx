@@ -44,8 +44,7 @@ class Labpageclass extends Component<AppProps,AppState> {
   };
 
   componentDidMount(){
-    console.log('http://localhost:8000/backend/labs/reqlab/'+this.props.labid+'/');
-    fetch('http://localhost:8000/backend/labs/reqlab/'+this.props.labid+'/',
+    fetch('https://eced.herokuapp.com/backend/labs/reqlab/'+this.props.labid+'/',
       {method: 'GET'}
     ).then(
       response => response.json()

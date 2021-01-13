@@ -31,7 +31,7 @@ export default class Staticpage extends Component<AppProps,AppState> {
   };
 
   componentDidMount(){
-    fetch('http://localhost:8000/backend/page/reqpage/'.concat(this.props.urlslug).concat('/'),
+    fetch('https://eced.herokuapp.com/page/reqpage/'.concat(this.props.urlslug).concat('/'),
       {method: 'GET'}
     ).then(
       response => response.json()

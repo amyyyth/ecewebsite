@@ -396,7 +396,7 @@ export default class Facultyapp extends Component<AppProps,AppState> {
     }};
 
   componentDidMount(){
-    fetch('http://localhost:8000/backend/faculty/allfac/',
+    fetch('https://eced.herokuapp.com/backend/faculty/allfac/',
       {method: 'GET'}
     ).then(
       response => response.json()

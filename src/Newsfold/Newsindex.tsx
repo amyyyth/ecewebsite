@@ -20,7 +20,7 @@ export default class Primarynews extends Component<AppProps,AppState> {
     }};
 
   componentDidMount(){
-    fetch('http://localhost:8000/backend/newsblog/getnewshead/',
+    fetch('https://eced.herokuapp.com/backend/newsblog/getnewshead/',
       {method: 'GET'}
     ).then(
       response => response.json()
