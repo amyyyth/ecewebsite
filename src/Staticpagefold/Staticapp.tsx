@@ -4,55 +4,47 @@ import Container from "@material-ui/core/Container";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import { useRouteMatch } from "react-router-dom";
-import Rajpath from "../rajpath.jpg";
-
-export default function Labslist(){
-  let match = useRouteMatch();
-  return <Labslistclass match={match} />;
-}
 
 interface AppProps {
-  match: any
+  urlslug: string
 }
 interface AppState {
   apidata: {
       data: {
-          id: string;
-          heading: string
-        }[]
+          heading: string,
+          descops: string
+        }
     }
 }
 
-class Labslistclass extends Component<AppProps,AppState> {
+export default class Staticpage extends Component<AppProps,AppState> {
   constructor(props: any){
     super(props);
     this.state = {
         apidata: {
-            data: [{
-                id: '1',
-                heading: 'Loading...'
-            }]
+            data: {
+                heading: 'Loading...',
+                descops: '<p>Loading...</p>'
+            }
         }
     };
   };
 
   componentDidMount(){
-    fetch('http://localhost:8000/backend/labs/reqlabls/',
+    fetch('http://localhost:8000/backend/page/reqpage/'.concat(this.props.urlslug).concat('/'),
       {method: 'GET'}
     ).then(
       response => response.json()
       ).then(result =>{
         this.setState({apidata:result});
-      }).catch(error=>{console.log("Did not get labs")})
+      }).catch(error=>{console.log("Did not get data")})
   };
 
   render() {
-    let match = this.props.match;
     return (
       <Container className="maincontainer">
         <Card className="imageplaceholder">
-          <img height="100%" src={Rajpath} alt="someImg" ></img>
+          <img height="100%" src="https://lh3.googleusercontent.com/proxy/OzDAbpL93wo7FEU2uaOjWv9ekwUSs-qASbfhL07GO8Rqfl8ImsY8smRLwFb3R3fG8xNdEKfVDxVqlDbmn5HJmdJta6VzPNRxMa9y_8Non0E3k9hKOsEJ7Os" alt="someImg" ></img>
         </Card>
         <Card className="contentplaceholder">
           <CardContent>
@@ -61,16 +53,12 @@ class Labslistclass extends Component<AppProps,AppState> {
               <div className="cardcontents">
                 <Typography component="div" style={{ height: "105vh" }}>
                   <h1 style={{ position: "relative", left: "2%", top: "5%" }}>
-                    LABORATORIES
+                    {this.state.apidata.data.heading}
                   </h1>
                   <div className="labs">
-                    {
-                      this.state.apidata.data.map(function(obj,index){
-                        return (
-                          <li><a href={`${match.url}/`.concat(obj.id)}>{obj.heading}</a></li>
-                        )
-                      })
-                    }
+                    <div className={ "ql-container ql-snow" }>
+                        <div className={ "ql-editor" } dangerouslySetInnerHTML={{ __html: this.state.apidata.data.descops }}></div>
+                    </div>
                   </div>
                 </Typography>
               </div>

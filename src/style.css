@@ -168,3 +168,35 @@ div.labs a:hover {
   background-color: #062a51;
   color: #75e7e2;
 }
+
+.workshopdetails {
+  margin-right: 10px;
+  float: right;
+  display: block;
+  border-left: 4px solid #06294f;
+  padding-left: 60px;
+}
+
+.imageplaceholderspecific {
+  background-color: #31c2bb;
+  width: 90%;
+  height: 45%;
+  position: relative;
+  top: 5%;
+  left: 5%;
+  display: inline-block;
+  vertical-align: middle;
+  z-index: 1;
+}
+.contentplaceholderspecific {
+  background-color: #ffffff;
+  /* margin-bottom: 50px; */
+  width: 84%;
+  height: 750px;
+  position: relative;
+  left: 15%;
+  top: -30%;
+  z-index: 2;
+  display: inline-block;
+  vertical-align: middle;
+}

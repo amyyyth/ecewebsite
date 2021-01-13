@@ -11,7 +11,7 @@ import {
   Route
 } from "react-router-dom";
 
-import "./quill.snow.min.css";
+import "./editedquill.snow.min.css";
 import PrimaryNavBar from "./NavigBar/Nvgbar";
 import PrimaryCarousel from "./Carouselfold/CarouselComp";
 import PrimaryDepro from "./DepProfold/Depro";
@@ -23,7 +23,9 @@ import MobileNavBar from "./NavigBar/Mobnvgbar";
 import Primaryfooter from "./Footerfold/Footer";
 import Academics from "./Academicsfold/Acadpage";
 import Facultyapp from "./Facultiesfold/Facultypage";
-import Workshops_page from "./Labsfold/Labslistpage";
+import Labslist from "./Labsfold/Labslistpage";
+import Labpage from "./Labsfold/Labspecific";
+import Staticpage from "./Staticpagefold/Staticapp";
 
 interface AppProps {}
 interface AppState {
@@ -133,8 +135,35 @@ class App extends Component<AppProps, AppState> {
                 <Route path="/faculty">
                   <Facultyapp />
                 </Route>
+                <Route path="/labs/:labid">
+                  <Labpage />
+                </Route>
                 <Route path="/labs">
-                  <Workshops_page />
+                  <Labslist />
+                </Route>
+                <Route path="/staff">
+                  <Staticpage urlslug="staff" />
+                </Route>
+                <Route path="/adhoc">
+                  <Staticpage urlslug="adhoc" />
+                </Route>
+                <Route path="/conferenceroom">
+                  <Staticpage urlslug="conferenceroom" />
+                </Route>
+                <Route path="/seminarhall">
+                  <Staticpage urlslug="seminarhall" />
+                </Route>
+                <Route path="/departmentlibrary">
+                  <Staticpage urlslug="departmentlibrary" />
+                </Route>
+                <Route path="/departmentbuildings">
+                  <Staticpage urlslug="departmentbuildings" />
+                </Route>
+                <Route path="/phdongoing">
+                  <Staticpage urlslug="phdongoing" />
+                </Route>
+                <Route path="/phdawarded">
+                  <Staticpage urlslug="phdawarded" />
                 </Route>
                 <Route path="/">
                   {this.indexpage()}
