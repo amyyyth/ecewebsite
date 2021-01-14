@@ -155,6 +155,9 @@ class App extends Component<AppProps, AppState> {
                 <Route path="/conferenceroom">
                   <Staticpage urlslug="conferenceroom" />
                 </Route>
+                <Route path="/areasofresearch">
+                  <Staticpage urlslug="areasofresearch" />
+                </Route>
                 <Route path="/seminarhall">
                   <Staticpage urlslug="seminarhall" />
                 </Route>

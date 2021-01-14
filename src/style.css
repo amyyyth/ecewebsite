@@ -139,7 +139,7 @@ div.fac td {
 }
 .cardcontents {
   position: relative;
-  top: -100px;
+  top: -50px;
   color: #062a51;
 }
 div.labs li {
@@ -149,7 +149,6 @@ div.labs li {
 div.labs {
   text-align: left;
   padding: 10px;
-  margin-top: 50px;
 }
 div.labs a {
   text-decoration: none;
@@ -180,7 +179,7 @@ div.labs a:hover {
 .imageplaceholderspecific {
   background-color: #31c2bb;
   width: 90%;
-  height: 45%;
+  min-height: 45%;
   position: relative;
   top: 5%;
   left: 5%;

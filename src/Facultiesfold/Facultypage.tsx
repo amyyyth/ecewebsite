@@ -6,22 +6,17 @@ import CardContent from "@material-ui/core/CardContent";
 import TextField from "@material-ui/core/TextField";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardMedia from "@material-ui/core/CardMedia";
-//import Box from "@material-ui/core/Box";
-//import Collapse from "@material-ui/core/Collapse";
-//import IconButton from "@material-ui/core/IconButton";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
-// import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-//import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
-//import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import { useMediaQuery } from "react-responsive";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import CircularProgress from '@material-ui/core/CircularProgress';
 import "./faculty.css";
 
 interface FacultyDetails {
@@ -50,7 +45,8 @@ interface AppProps {}
 interface AppState {
   apidata : {
     details: FacultyDetails[]
-  }
+  },
+  isLoadState: boolean
 }
 
 interface topass {
@@ -279,6 +275,7 @@ function Impfunction(dataFull: topass) {
           width: isTwo ? "90%" : "100%",
           overflowX: "hidden",
           paddingBottom: "0px",
+          marginBottom: "20px"
         }}
       >
         <TextField
@@ -392,7 +389,8 @@ export default class Facultyapp extends Component<AppProps,AppState> {
             }]
           }
         ]
-      }
+      },
+      isLoadState: false
     }};
 
   componentDidMount(){
@@ -402,17 +400,34 @@ export default class Facultyapp extends Component<AppProps,AppState> {
       response => response.json()
       ).then(result =>{
         this.setState({apidata:result});
+        this.setState({isLoadState:true});
       }).catch(error=>{console.log("Did not get Faculty details")})
   };
 
-  render() {
+  getfaculty = () => {
     return (
       <div>
         <Impfunction 
           {...this.state.apidata}
         />
       </div>
-    );
+    )
   }
 
+  render() {
+    return (
+      <div>
+      {
+        this.state.isLoadState ? (
+          this.getfaculty()
+        ) : (
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "80vh" }} >
+            <CircularProgress />
+              <h4>Getting faculty details...</h4>
+          </div>
+        )
+      }
+      </div>
+    );
+  }
 }

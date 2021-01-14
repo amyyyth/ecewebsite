@@ -157,13 +157,17 @@ export default function PrimaryNavBar() {
                       </MenuItem>
                     </a>
                     <Divider />
-                    <MenuItem onClick={handleClose(setAnchorEl2)}>
-                      Staff
-                    </MenuItem>
+                    <a href="/staff" style={{ color: "#03205c" }}>
+                      <MenuItem onClick={handleClose(setAnchorEl2)}>
+                        Staff
+                      </MenuItem>
+                    </a>
                     <Divider />
-                    <MenuItem onClick={handleClose(setAnchorEl2)}>
-                      Adhoc
-                    </MenuItem>
+                    <a href="/adhoc" style={{ color: "#03205c" }}>
+                      <MenuItem onClick={handleClose(setAnchorEl2)}>
+                        Adhoc
+                      </MenuItem>
+                    </a>
                   </Menu>
                 </div>
 
@@ -312,7 +316,7 @@ export default function PrimaryNavBar() {
                     aria-haspopup="true"
                     color="secondary"
                   >
-                    <a href="http://localhost:8000/backend/people/login/"><AccountCircleIcon /></a>
+                    <a href="https://eced.herokuapp.com/backend/people/login/"><AccountCircleIcon /></a>
                   </Button>
                 </div>
               </Box>

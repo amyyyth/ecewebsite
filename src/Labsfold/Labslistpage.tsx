@@ -59,7 +59,7 @@ class Labslistclass extends Component<AppProps,AppState> {
             <Container>
               <div className="triangle1" />
               <div className="cardcontents">
-                <Typography component="div" style={{ height: "105vh" }}>
+                <Typography component="div" style={{ minHeight: "105vh" }}>
                   <h1 style={{ position: "relative", left: "2%", top: "5%" }}>
                     LABORATORIES
                   </h1>
