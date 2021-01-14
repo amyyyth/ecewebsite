@@ -4,6 +4,7 @@ import Container from "@material-ui/core/Container";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
+import Rajpath from "../rajpath.jpg";
 
 interface AppProps {
   urlslug: string
@@ -31,7 +32,7 @@ export default class Staticpage extends Component<AppProps,AppState> {
   };
 
   componentDidMount(){
-    fetch('https://eced.herokuapp.com/page/reqpage/'.concat(this.props.urlslug).concat('/'),
+    fetch('https://eced.herokuapp.com/backend/page/reqpage/'.concat(this.props.urlslug).concat('/'),
       {method: 'GET'}
     ).then(
       response => response.json()
@@ -44,7 +45,7 @@ export default class Staticpage extends Component<AppProps,AppState> {
     return (
       <Container className="maincontainer">
         <Card className="imageplaceholder">
-          <img height="100%" src="https://lh3.googleusercontent.com/proxy/OzDAbpL93wo7FEU2uaOjWv9ekwUSs-qASbfhL07GO8Rqfl8ImsY8smRLwFb3R3fG8xNdEKfVDxVqlDbmn5HJmdJta6VzPNRxMa9y_8Non0E3k9hKOsEJ7Os" alt="someImg" ></img>
+          <img height="100%" src={Rajpath} alt="someImg" ></img>
         </Card>
         <Card className="contentplaceholder">
           <CardContent>

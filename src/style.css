@@ -200,3 +200,24 @@ div.labs a:hover {
   display: inline-block;
   vertical-align: middle;
 }
+
+.testimonialheading {
+  z-index: 1000;
+  position: relative;
+  top: -35%;
+}
+.triangle2 {
+  width: 0;
+  height: 0;
+  position: relative;
+  border-top: 100px solid rgb(255, 255, 255);
+  border-left: 100px solid transparent;
+  transform: scale(15) translate(-32.4px, 30px) rotate(680deg);
+  z-index: 0;
+}
+.imgtxt{
+  line-height: 100%;
+  position: relative;
+  font-size: 90%;
+  
+}

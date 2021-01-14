@@ -252,16 +252,19 @@ export default function PrimaryNavBar() {
                         Conference Room
                       </MenuItem>
                     </a>
+                    <Divider />
                     <a href="/seminarhall" style={{ color: "#03205c" }}>
                       <MenuItem onClick={handleClose(setAnchorEl4)}>
                         Seminar Hall
                       </MenuItem>
                     </a>
+                    <Divider />
                     <a href="/departmentbuildings" style={{ color: "#03205c" }}>
                       <MenuItem onClick={handleClose(setAnchorEl4)}>
                         Department Buildings
                       </MenuItem>
                     </a>
+                    <Divider />
                     <a href="/departmentlibrary" style={{ color: "#03205c" }}>
                       <MenuItem onClick={handleClose(setAnchorEl4)}>
                         Department Library

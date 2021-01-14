@@ -26,6 +26,7 @@ import Facultyapp from "./Facultiesfold/Facultypage";
 import Labslist from "./Labsfold/Labslistpage";
 import Labpage from "./Labsfold/Labspecific";
 import Staticpage from "./Staticpagefold/Staticapp";
+import SwipeableTextMobileStepper from './Testimonialsfold/Testimonials';
 
 interface AppProps {}
 interface AppState {
@@ -81,13 +82,15 @@ class App extends Component<AppProps, AppState> {
             </div>
           </Container>
           <Container style={{  display: "flex", marginTop:"25px"}}>
-          <div>
+          <div style={{ width: "100vw" }}>
             <Box display="flex">
               <Primarymv />
             </Box>
           </div>
           </Container>
-
+          <div>
+            <SwipeableTextMobileStepper />
+          </div>
         </div>
       </div>
     );
@@ -100,6 +103,7 @@ class App extends Component<AppProps, AppState> {
           <MobileNavBar />
           <div id="bg" style={{ width: "100%" }}>
             <div id="mobdepro">
+              <h1>Still in Development! Choose Desktop site mode.</h1>
               <PrimaryDepro />
             </div>
             <div id="newsindex">
@@ -110,6 +114,7 @@ class App extends Component<AppProps, AppState> {
                 <Primarymv />
               </Box>
             </div>
+            <SwipeableTextMobileStepper />
             <Primaryfooter />
           </div>
         </div>
