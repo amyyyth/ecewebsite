@@ -4,123 +4,109 @@ h1,
 p {
   font-family: Lato;
 }
-
 a {
   color: #fffff0;
   text-decoration: none;
 }
-
 ul{
   list-style-type: none;
   padding-left: 0;
 }
-
 li {
   padding-bottom: 5px;
 }
-
 html,
 body {
   margin: 0px 0px 0px 0px;
   height: 100%;
   overflow-x: hidden;
 }
-
 #botcardsa {
   position: relative;
   bottom: 40px;
 }
-
 .pdbga {
   background-size: cover;
   background-image: url('data:image/svg+xml;utf8,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 50" enable-background="new" xml:space="preserve"><polygon points="0,0 0,20 100,40 100,0" style="fill:rgb(211,254,252)"/></svg>');
 }
-
 .acadbody {
   margin-left: 40px;
   margin-right: 40px;
   margin-bottom: 40px;
   padding-top: 20px;
 }
-
 .acadbodymob {
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 10px;
 }
-
 #carsa {
   box-shadow: 0px 10px 5px gray;
   height: 50vh;
 }
-
 #carsamob {
   box-shadow: 0px 10px 5px gray;
 }
-
 #qlinksa {
   background-color: #26a69a;
   color: #fffff0;
 }
-
 #newsindex {
   padding-top: 20px;
 }
-
 #lmain {
   margin-right: 2%;
   width: 68%;
 }
-
 #rmain {
   margin-left: 2%;
   width: 28%
 }
-
 #mobdepro {
   margin-left: 10px;
   margin-right: 10px;
   margin-top: 10px;
   padding-bottom: 10px;
 }
-
 #mv {
   margin-top: 20px;
   margin-left: 64px;
   margin-right: 64px;
 }
-
 div.ql-editor table,
 div.ql-editor th,
 div.ql-editor td {
     border: 1px solid black;
 }
-
 div.ql-editor table {
     width: 100%;
     border-collapse: collapse;
 }
-
 div.fac th,
 div.fac td {
   padding-top: 5px;
   padding-bottom: 5px;
 }
-
 #bg {
   width: 100%;
   height: 100%;
   background-color: #fffff0;
 }
-
 .maincontainer {
   background-color: #ffffff;
   margin: 0;
   max-width: 5000px;
   padding: 0;
   width: 99vw;
-  height: 160vh;
-
+  min-height: 160vh;
+  scroll-behavior: auto;
+}
+.maincontainermobile {
+  background-color: #ffffff;
+  margin: 0;
+  padding-top: 20px;
+  width: 99vw;
+  min-height: 160vh;
   scroll-behavior: auto;
 }
 .imageplaceholder {
@@ -144,6 +130,10 @@ div.fac td {
   z-index: 2;
   display: inline-block;
   vertical-align: middle;
+}
+.contentplaceholdermobile {
+  background-color: #ffffff;
+  min-height: 750px;
 }
 .triangle1 {
   width: 0;
@@ -179,11 +169,9 @@ div.labs a:link {
 div.labs a:hover {
   text-decoration: underline;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  /* background-color: rgba(0, 255, 255, 0.2); */
   background-color: #062a51;
   color: #75e7e2;
 }
-
 .workshopdetails {
   margin-right: 10px;
   float: right;
@@ -191,7 +179,11 @@ div.labs a:hover {
   border-left: 4px solid #06294f;
   padding-left: 60px;
 }
-
+.workshopdetailsmobile {
+  margin-right: 10px;
+  display: block;
+  padding-bottom: 20px;
+}
 .imageplaceholderspecific {
   background-color: #31c2bb;
   width: 90%;
@@ -205,7 +197,6 @@ div.labs a:hover {
 }
 .contentplaceholderspecific {
   background-color: #ffffff;
-  /* margin-bottom: 50px; */
   width: 84%;
   min-height: 750px;
   position: relative;
@@ -233,6 +224,5 @@ div.labs a:hover {
 .imgtxt{
   line-height: 100%;
   position: relative;
-  font-size: 90%;
-  
+  font-size: 90%; 
 }

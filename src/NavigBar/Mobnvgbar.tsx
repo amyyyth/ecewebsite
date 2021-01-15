@@ -150,6 +150,12 @@ export default function MobileNavBar() {
                     <ListItem button component="a" {...{href: "/seminarhall"}}>
                       <ListItemText primary="Seminar Hall" />
                     </ListItem>
+                    <ListItem button component="a" {...{href: "/departmentbuildings"}}>
+                      <ListItemText primary="Department Buildings" />
+                    </ListItem>
+                    <ListItem button component="a" {...{href: "/departmentlibrary"}}>
+                      <ListItemText primary="Department Library" />
+                    </ListItem>
                   </List>
                 </AccordionDetails>
               </Accordion>

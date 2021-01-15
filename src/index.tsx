@@ -23,6 +23,9 @@ import Labslist from "./Labsfold/Labslistpage";
 import Labpage from "./Labsfold/Labspecific";
 import Staticpage from "./Staticpagefold/Staticapp";
 import SwipeableTextMobileStepper from './Testimonialsfold/Testimonials';
+import MobLabslist from "./Labsfold/Labslistpagemob";
+import MobLabpage from "./Labsfold/Labspecificmob";
+import MobStaticpage from "./Staticpagefold/Staticappmob";
 
 interface AppProps {}
 interface AppState {
@@ -136,37 +139,37 @@ class App extends Component<AppProps, AppState> {
                 <Facultyapp />
               </Route>
               <Route path="/labs/:labid">
-                <Labpage />
+                <MobLabpage />
               </Route>
               <Route path="/labs">
-                <Labslist />
+                <MobLabslist />
               </Route>
               <Route path="/staff">
-                <Staticpage urlslug="staff" />
+                <MobStaticpage urlslug="staff" />
               </Route>
               <Route path="/adhoc">
-                <Staticpage urlslug="adhoc" />
+                <MobStaticpage urlslug="adhoc" />
               </Route>
               <Route path="/conferenceroom">
-                <Staticpage urlslug="conferenceroom" />
+                <MobStaticpage urlslug="conferenceroom" />
               </Route>
               <Route path="/areasofresearch">
-                <Staticpage urlslug="areasofresearch" />
+                <MobStaticpage urlslug="areasofresearch" />
               </Route>
               <Route path="/seminarhall">
-                <Staticpage urlslug="seminarhall" />
+                <MobStaticpage urlslug="seminarhall" />
               </Route>
               <Route path="/departmentlibrary">
-                <Staticpage urlslug="departmentlibrary" />
+                <MobStaticpage urlslug="departmentlibrary" />
               </Route>
               <Route path="/departmentbuildings">
-                <Staticpage urlslug="departmentbuildings" />
+                <MobStaticpage urlslug="departmentbuildings" />
               </Route>
               <Route path="/phdongoing">
-                <Staticpage urlslug="phdongoing" />
+                <MobStaticpage urlslug="phdongoing" />
               </Route>
               <Route path="/phdawarded">
-                <Staticpage urlslug="phdawarded" />
+                <MobStaticpage urlslug="phdawarded" />
               </Route>
               <Route path="/">
                 { this.mobindexpage() }
