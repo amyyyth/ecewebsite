@@ -34,12 +34,28 @@ body {
 .pdbga {
   background-size: cover;
   background-image: url('data:image/svg+xml;utf8,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 50" enable-background="new" xml:space="preserve"><polygon points="0,0 0,20 100,40 100,0" style="fill:rgb(211,254,252)"/></svg>');
-  padding: 15px
+}
+
+.acadbody {
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  padding-top: 20px;
+}
+
+.acadbodymob {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 10px;
 }
 
 #carsa {
   box-shadow: 0px 10px 5px gray;
   height: 50vh;
+}
+
+#carsamob {
+  box-shadow: 0px 10px 5px gray;
 }
 
 #qlinksa {
@@ -92,6 +108,7 @@ div.fac td {
 }
 
 #bg {
+  width: 100%;
   height: 100%;
   background-color: #fffff0;
 }
@@ -119,9 +136,8 @@ div.fac td {
 }
 .contentplaceholder {
   background-color: #ffffff;
-  /* margin-bottom: 50px; */
   width: 60%;
-  height: 750px;
+  min-height: 750px;
   position: relative;
   left: 38%;
   top: -40%;
@@ -179,9 +195,9 @@ div.labs a:hover {
 .imageplaceholderspecific {
   background-color: #31c2bb;
   width: 90%;
-  min-height: 45%;
+  height: 45%;
   position: relative;
-  top: 5%;
+  top: 15vh;
   left: 5%;
   display: inline-block;
   vertical-align: middle;
@@ -191,10 +207,10 @@ div.labs a:hover {
   background-color: #ffffff;
   /* margin-bottom: 50px; */
   width: 84%;
-  height: 750px;
+  min-height: 750px;
   position: relative;
   left: 15%;
-  top: -30%;
+  top: -85vh;
   z-index: 2;
   display: inline-block;
   vertical-align: middle;

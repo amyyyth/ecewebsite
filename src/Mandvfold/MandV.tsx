@@ -5,7 +5,6 @@ import CardContent from "@material-ui/core/CardContent";
 import Divider from '@material-ui/core/Divider';
 
 export default function Primarymv() {
-  //const classes = useStyles();
   return (
     <Card className="pdbga">
       <CardContent>

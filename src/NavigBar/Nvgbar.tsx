@@ -152,19 +152,19 @@ export default function PrimaryNavBar() {
                     getContentAnchorEl={null}
                   >
                     <a href="/faculty" style={{ color: "#03205c" }}>
-                      <MenuItem onClick={handleClose(setAnchorEl2)}>
+                      <MenuItem>
                         Faculty
                       </MenuItem>
                     </a>
                     <Divider />
                     <a href="/staff" style={{ color: "#03205c" }}>
-                      <MenuItem onClick={handleClose(setAnchorEl2)}>
+                      <MenuItem>
                         Staff
                       </MenuItem>
                     </a>
                     <Divider />
                     <a href="/adhoc" style={{ color: "#03205c" }}>
-                      <MenuItem onClick={handleClose(setAnchorEl2)}>
+                      <MenuItem>
                         Adhoc
                       </MenuItem>
                     </a>
@@ -199,19 +199,19 @@ export default function PrimaryNavBar() {
                     getContentAnchorEl={null}
                   >
                     <a href="/areasofresearch" style={{ color: "#03205c" }}>
-                      <MenuItem onClick={handleClose(setAnchorEl3)}>
+                      <MenuItem>
                         Areas of Research
                       </MenuItem>
                     </a>
                     <Divider />
                     <a href="/phdongoing" style={{ color: "#03205c" }}>
-                      <MenuItem onClick={handleClose(setAnchorEl3)}>
+                      <MenuItem>
                         PhD Students (Ongoing)
                       </MenuItem>
                     </a>
                     <Divider />
                     <a href="/phdawarded" style={{ color: "#03205c" }}>
-                      <MenuItem onClick={handleClose(setAnchorEl3)}>
+                      <MenuItem>
                       PhD Students (Awarded)
                       </MenuItem>
                     </a>
@@ -246,31 +246,31 @@ export default function PrimaryNavBar() {
                     getContentAnchorEl={null}
                   >
                     <a href="/labs" style={{ color: "#03205c" }}>
-                      <MenuItem onClick={handleClose(setAnchorEl4)}>
+                      <MenuItem>
                         Laboratories
                       </MenuItem>
                     </a>
                     <Divider />
                     <a href="/conferenceroom" style={{ color: "#03205c" }}>
-                      <MenuItem onClick={handleClose(setAnchorEl4)}>
+                      <MenuItem>
                         Conference Room
                       </MenuItem>
                     </a>
                     <Divider />
                     <a href="/seminarhall" style={{ color: "#03205c" }}>
-                      <MenuItem onClick={handleClose(setAnchorEl4)}>
+                      <MenuItem>
                         Seminar Hall
                       </MenuItem>
                     </a>
                     <Divider />
                     <a href="/departmentbuildings" style={{ color: "#03205c" }}>
-                      <MenuItem onClick={handleClose(setAnchorEl4)}>
+                      <MenuItem>
                         Department Buildings
                       </MenuItem>
                     </a>
                     <Divider />
                     <a href="/departmentlibrary" style={{ color: "#03205c" }}>
-                      <MenuItem onClick={handleClose(setAnchorEl4)}>
+                      <MenuItem>
                         Department Library
                       </MenuItem>
                     </a>

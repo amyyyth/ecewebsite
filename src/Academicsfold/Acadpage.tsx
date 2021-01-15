@@ -5,7 +5,8 @@ import Container from '@material-ui/core/Container';
 
 interface AppProps {
     heading: string,
-    acadurl: string
+    acadurl: string,
+    classname: string
 }
 
 interface AppState {
@@ -40,16 +41,14 @@ export default class Academics extends Component<AppProps,AppState> {
         <h1 style={{ paddingLeft: "40px", paddingTop: "40px", color: "#03205c" }}>
           {this.props.heading}
         </h1>
-        <Container style={{ marginLeft: "40px", marginRight: "40px", marginBottom: "40px" }}>
-            <div style={{ paddingTop: "20px" }}>
-                <Card className="pdbga">
-                    <CardContent>
-                        <div className={ "ql-container ql-snow" }>
-                          <div className={ "ql-editor" } dangerouslySetInnerHTML={{ __html: this.state.apidata.data }}></div>
-                        </div>
-                    </CardContent>
-                </Card>
-            </div>
+        <Container className={this.props.classname}>
+          <Card className="pdbga">
+              <CardContent>
+                  <div className={ "ql-container ql-snow" }>
+                    <div className={ "ql-editor" } dangerouslySetInnerHTML={{ __html: this.state.apidata.data }}></div>
+                  </div>
+              </CardContent>
+          </Card>
         </Container>
       </div>
     );

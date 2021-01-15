@@ -10,7 +10,7 @@ interface AppState {
   isLoadState: boolean
 }
 
-export default class PrimaryCarousel extends Component<AppProps,AppState> {
+export default class MobileCarousel extends Component<AppProps,AppState> {
   constructor(props: any){
     super(props);
     this.state = {
@@ -36,8 +36,8 @@ export default class PrimaryCarousel extends Component<AppProps,AppState> {
     let da = this.state.imgs.cimgs.map(function(objs,index){
       return (
         <Slide index={index}>
-          <div style={{ display: "flex", justifyContent: "center", height: "50vh" }}>
-            <img height={"100%"} src={objs.img} />                
+          <div style={{ display: "flex", justifyContent: "center", width: "100vw" }}>
+            <img width={"100%"} src={objs.img} />                
           </div>
         </Slide>)
         });
@@ -59,7 +59,7 @@ export default class PrimaryCarousel extends Component<AppProps,AppState> {
             this.state.isLoadState ? (
               this.imgSliders()
             ) : (
-              <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "50vh" }} >
+              <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "30vh" }} >
                 <CircularProgress />
                 <h4>Getting images...</h4>
               </div>
