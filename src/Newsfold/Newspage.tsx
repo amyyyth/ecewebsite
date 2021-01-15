@@ -29,7 +29,7 @@ export default class Newspagecomp extends Component<AppProps,AppState> {
   };
 
   componentDidMount(){
-    fetch('http://localhost:8000/backend/newsblog/getnews/1/',
+    fetch('https://eced.herokuapp.com/backend/newsblog/getnews/1/',
       {method: 'GET'}
     ).then(
       response => response.json()

@@ -11,7 +11,7 @@ import {
   Route
 } from "react-router-dom";
 
-import "./quill.snow.min.css";
+import "./editedquill.snow.min.css";
 import PrimaryNavBar from "./NavigBar/Nvgbar";
 import PrimaryCarousel from "./Carouselfold/CarouselComp";
 import PrimaryDepro from "./DepProfold/Depro";
@@ -23,6 +23,10 @@ import MobileNavBar from "./NavigBar/Mobnvgbar";
 import Primaryfooter from "./Footerfold/Footer";
 import Academics from "./Academicsfold/Acadpage";
 import Facultyapp from "./Facultiesfold/Facultypage";
+import Labslist from "./Labsfold/Labslistpage";
+import Labpage from "./Labsfold/Labspecific";
+import Staticpage from "./Staticpagefold/Staticapp";
+import SwipeableTextMobileStepper from './Testimonialsfold/Testimonials';
 
 interface AppProps {}
 interface AppState {
@@ -78,13 +82,15 @@ class App extends Component<AppProps, AppState> {
             </div>
           </Container>
           <Container style={{  display: "flex", marginTop:"25px"}}>
-          <div>
+          <div style={{ width: "100vw" }}>
             <Box display="flex">
               <Primarymv />
             </Box>
           </div>
           </Container>
-
+          <div>
+            <SwipeableTextMobileStepper />
+          </div>
         </div>
       </div>
     );
@@ -97,6 +103,7 @@ class App extends Component<AppProps, AppState> {
           <MobileNavBar />
           <div id="bg" style={{ width: "100%" }}>
             <div id="mobdepro">
+              <h1>Still in Development! Choose Desktop site mode.</h1>
               <PrimaryDepro />
             </div>
             <div id="newsindex">
@@ -107,6 +114,7 @@ class App extends Component<AppProps, AppState> {
                 <Primarymv />
               </Box>
             </div>
+            <SwipeableTextMobileStepper />
             <Primaryfooter />
           </div>
         </div>
@@ -131,6 +139,39 @@ class App extends Component<AppProps, AppState> {
                 </Route>
                 <Route path="/faculty">
                   <Facultyapp />
+                </Route>
+                <Route path="/labs/:labid">
+                  <Labpage />
+                </Route>
+                <Route path="/labs">
+                  <Labslist />
+                </Route>
+                <Route path="/staff">
+                  <Staticpage urlslug="staff" />
+                </Route>
+                <Route path="/adhoc">
+                  <Staticpage urlslug="adhoc" />
+                </Route>
+                <Route path="/conferenceroom">
+                  <Staticpage urlslug="conferenceroom" />
+                </Route>
+                <Route path="/areasofresearch">
+                  <Staticpage urlslug="areasofresearch" />
+                </Route>
+                <Route path="/seminarhall">
+                  <Staticpage urlslug="seminarhall" />
+                </Route>
+                <Route path="/departmentlibrary">
+                  <Staticpage urlslug="departmentlibrary" />
+                </Route>
+                <Route path="/departmentbuildings">
+                  <Staticpage urlslug="departmentbuildings" />
+                </Route>
+                <Route path="/phdongoing">
+                  <Staticpage urlslug="phdongoing" />
+                </Route>
+                <Route path="/phdawarded">
+                  <Staticpage urlslug="phdawarded" />
                 </Route>
                 <Route path="/">
                   {this.indexpage()}

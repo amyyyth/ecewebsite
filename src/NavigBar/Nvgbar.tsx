@@ -153,17 +153,21 @@ export default function PrimaryNavBar() {
                   >
                     <a href="/faculty" style={{ color: "#03205c" }}>
                       <MenuItem onClick={handleClose(setAnchorEl2)}>
-                        FACULTY
+                        Faculty
                       </MenuItem>
                     </a>
                     <Divider />
-                    <MenuItem onClick={handleClose(setAnchorEl2)}>
-                      STAFF
-                    </MenuItem>
+                    <a href="/staff" style={{ color: "#03205c" }}>
+                      <MenuItem onClick={handleClose(setAnchorEl2)}>
+                        Staff
+                      </MenuItem>
+                    </a>
                     <Divider />
-                    <MenuItem onClick={handleClose(setAnchorEl2)}>
-                      ADHOC
-                    </MenuItem>
+                    <a href="/adhoc" style={{ color: "#03205c" }}>
+                      <MenuItem onClick={handleClose(setAnchorEl2)}>
+                        Adhoc
+                      </MenuItem>
+                    </a>
                   </Menu>
                 </div>
 
@@ -194,17 +198,23 @@ export default function PrimaryNavBar() {
                     elevation={0}
                     getContentAnchorEl={null}
                   >
-                    <MenuItem onClick={handleClose(setAnchorEl3)}>
-                      AREAS OF RESEARCH
-                    </MenuItem>
+                    <a href="/areasofresearch" style={{ color: "#03205c" }}>
+                      <MenuItem onClick={handleClose(setAnchorEl3)}>
+                        Areas of Research
+                      </MenuItem>
+                    </a>
                     <Divider />
-                    <MenuItem onClick={handleClose(setAnchorEl3)}>
-                      ONGOING
-                    </MenuItem>
+                    <a href="/phdongoing" style={{ color: "#03205c" }}>
+                      <MenuItem onClick={handleClose(setAnchorEl3)}>
+                        PhD Students (Ongoing)
+                      </MenuItem>
+                    </a>
                     <Divider />
-                    <MenuItem onClick={handleClose(setAnchorEl3)}>
-                      Lorem{" "}
-                    </MenuItem>
+                    <a href="/phdawarded" style={{ color: "#03205c" }}>
+                      <MenuItem onClick={handleClose(setAnchorEl3)}>
+                      PhD Students (Awarded)
+                      </MenuItem>
+                    </a>
                   </Menu>
                 </div>
 
@@ -235,14 +245,35 @@ export default function PrimaryNavBar() {
                     elevation={0}
                     getContentAnchorEl={null}
                   >
-                    <MenuItem onClick={handleClose(setAnchorEl4)}>
-                      lore
-                    </MenuItem>
+                    <a href="/labs" style={{ color: "#03205c" }}>
+                      <MenuItem onClick={handleClose(setAnchorEl4)}>
+                        Laboratories
+                      </MenuItem>
+                    </a>
                     <Divider />
-                    <MenuItem onClick={handleClose(setAnchorEl4)}>
-                      m ipsem
-                    </MenuItem>
-                    <MenuItem onClick={handleClose(setAnchorEl4)}>as</MenuItem>
+                    <a href="/conferenceroom" style={{ color: "#03205c" }}>
+                      <MenuItem onClick={handleClose(setAnchorEl4)}>
+                        Conference Room
+                      </MenuItem>
+                    </a>
+                    <Divider />
+                    <a href="/seminarhall" style={{ color: "#03205c" }}>
+                      <MenuItem onClick={handleClose(setAnchorEl4)}>
+                        Seminar Hall
+                      </MenuItem>
+                    </a>
+                    <Divider />
+                    <a href="/departmentbuildings" style={{ color: "#03205c" }}>
+                      <MenuItem onClick={handleClose(setAnchorEl4)}>
+                        Department Buildings
+                      </MenuItem>
+                    </a>
+                    <Divider />
+                    <a href="/departmentlibrary" style={{ color: "#03205c" }}>
+                      <MenuItem onClick={handleClose(setAnchorEl4)}>
+                        Department Library
+                      </MenuItem>
+                    </a>
                   </Menu>
                 </div>
 
@@ -250,7 +281,6 @@ export default function PrimaryNavBar() {
                   <Button
                     aria-controls="simple-menu"
                     aria-haspopup="true"
-                    onClick={handleClick(setAnchorEl3)}
                     color="secondary"
                     className={classes.navButton}
                   >
@@ -262,7 +292,6 @@ export default function PrimaryNavBar() {
                   <Button
                     aria-controls="simple-menu"
                     aria-haspopup="true"
-                    onClick={handleClick(setAnchorEl3)}
                     color="secondary"
                     className={classes.navButton}
                   >
@@ -274,7 +303,6 @@ export default function PrimaryNavBar() {
                   <Button
                     aria-controls="simple-menu"
                     aria-haspopup="true"
-                    onClick={handleClick(setAnchorEl3)}
                     color="secondary"
                     className={classes.navButton}
                   >
@@ -286,10 +314,9 @@ export default function PrimaryNavBar() {
                   <Button
                     aria-controls="simple-menu"
                     aria-haspopup="true"
-                    onClick={handleClick(setAnchorEl3)}
                     color="secondary"
                   >
-                    <a href="http://localhost:8000/backend/people/login/"><AccountCircleIcon /></a>
+                    <a href="https://eced.herokuapp.com/backend/people/login/"><AccountCircleIcon /></a>
                   </Button>
                 </div>
               </Box>
