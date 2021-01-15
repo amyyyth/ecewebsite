@@ -100,21 +100,19 @@ div.fac td {
   width: 99vw;
   min-height: 160vh;
   scroll-behavior: auto;
+  padding-top: 50px;
 }
 .maincontainermobile {
   background-color: #ffffff;
   margin: 0;
   padding-top: 20px;
-  width: 99vw;
   min-height: 160vh;
   scroll-behavior: auto;
 }
 .imageplaceholder {
-  background-color: #31c2bb;
-  width: 60%;
-  height: 55%;
+  top: 10vh;
+  height: 100vh;
   position: relative;
-  top: 20%;
   left: 5%;
   display: inline-block;
   vertical-align: middle;
@@ -126,7 +124,7 @@ div.fac td {
   min-height: 750px;
   position: relative;
   left: 38%;
-  top: -40%;
+  top: -100vh;
   z-index: 2;
   display: inline-block;
   vertical-align: middle;
