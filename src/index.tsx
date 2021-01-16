@@ -36,6 +36,9 @@ interface AppState {
 // ------------ THEME COLOR ---------------------
 
 const theme = createMuiTheme({
+  typography:{
+    fontFamily: "Karla,sans-serif,Montserrat",
+  },
   palette: {
     primary: {
       main: "#26a69a"
