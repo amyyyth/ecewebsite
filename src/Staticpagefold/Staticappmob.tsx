@@ -4,7 +4,6 @@ import Container from "@material-ui/core/Container";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import Rajpath from "../rajpath.jpg";
 
 interface AppProps {
   urlslug: string
@@ -18,7 +17,7 @@ interface AppState {
     }
 }
 
-export default class Staticpage extends Component<AppProps,AppState> {
+export default class MobStaticpage extends Component<AppProps,AppState> {
   constructor(props: any){
     super(props);
     this.state = {
@@ -43,11 +42,8 @@ export default class Staticpage extends Component<AppProps,AppState> {
 
   render() {
     return (
-      <Container className="maincontainer">
-        <Card className="imageplaceholder">
-          <img height="100%" src={Rajpath} alt="someImg" ></img>
-        </Card>
-        <Card className="contentplaceholder">
+      <Container className="maincontainermobile">
+        <Card className="contentplaceholdermobile">
           <CardContent>
             <Container>
               <div className="triangle1" />

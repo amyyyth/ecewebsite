@@ -5,11 +5,7 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import { isMobile } from "react-device-detect";
 import Container from '@material-ui/core/Container';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./editedquill.snow.min.css";
 import PrimaryNavBar from "./NavigBar/Nvgbar";
@@ -27,6 +23,9 @@ import Labslist from "./Labsfold/Labslistpage";
 import Labpage from "./Labsfold/Labspecific";
 import Staticpage from "./Staticpagefold/Staticapp";
 import SwipeableTextMobileStepper from './Testimonialsfold/Testimonials';
+import MobLabslist from "./Labsfold/Labslistpagemob";
+import MobLabpage from "./Labsfold/Labspecificmob";
+import MobStaticpage from "./Staticpagefold/Staticappmob";
 
 interface AppProps {}
 interface AppState {
@@ -85,7 +84,7 @@ class App extends Component<AppProps, AppState> {
             </div>
           </Container>
           <Container style={{  display: "flex", marginTop:"25px"}}>
-          <div style={{ width: "100vw" }}>
+          <div style={{ width: "100vw", padding: "15px" }}>
             <Box display="flex">
               <Primarymv />
             </Box>
@@ -99,46 +98,106 @@ class App extends Component<AppProps, AppState> {
     );
   }
 
+  mobindexpage = () => {
+    return (
+      <div id="bg" style={{ width: "100%" }}>
+        <div id="carsamob">
+          <PrimaryCarousel />
+        </div>
+        <div id="newsindex">
+          <Primarynews />
+        </div>
+        <div id="mobdepro">
+          <PrimaryDepro />
+        </div>
+        <div style={{ paddingTop: "20px" }}>
+          <Box display="flex">
+            <Primarymv />
+          </Box>
+        </div>
+        <SwipeableTextMobileStepper />
+      </div>
+    )
+  }
+
   renderChoose = () => {
     if (isMobile) {
       return (
-        <div style={{ width: "100%" }}>
+        <Router>
           <MobileNavBar />
-          <div id="bg" style={{ width: "100%" }}>
-            <div id="mobdepro">
-              <h1>Still in Development! Choose Desktop site mode.</h1>
-              <PrimaryDepro />
-            </div>
-            <div id="newsindex">
-                <Primarynews />
-            </div>
-            <div id="mv">
-              <Box display="flex">
-                <Primarymv />
-              </Box>
-            </div>
-            <SwipeableTextMobileStepper />
-            <Primaryfooter />
-          </div>
-        </div>
+            <Switch>
+              <Route path="/news">
+                <Newspagecomp />
+              </Route>
+              <Route path="/btech">
+                <Academics heading="B Tech" acadurl="btech" classname="acadbodymob" />
+              </Route>
+              <Route path="/mtech">
+                <Academics heading="M Tech" acadurl="mtech" classname="acadbodymob" />
+              </Route>
+              <Route path="/phd">
+                <Academics heading="PhD" acadurl="phd" classname="acadbodymob" />
+              </Route>
+              <Route path="/faculty">
+                <Facultyapp />
+              </Route>
+              <Route path="/labs/:labid">
+                <MobLabpage />
+              </Route>
+              <Route path="/labs">
+                <MobLabslist />
+              </Route>
+              <Route path="/staff">
+                <MobStaticpage urlslug="staff" />
+              </Route>
+              <Route path="/adhoc">
+                <MobStaticpage urlslug="adhoc" />
+              </Route>
+              <Route path="/conferenceroom">
+                <MobStaticpage urlslug="conferenceroom" />
+              </Route>
+              <Route path="/areasofresearch">
+                <MobStaticpage urlslug="areasofresearch" />
+              </Route>
+              <Route path="/seminarhall">
+                <MobStaticpage urlslug="seminarhall" />
+              </Route>
+              <Route path="/departmentlibrary">
+                <MobStaticpage urlslug="departmentlibrary" />
+              </Route>
+              <Route path="/departmentbuildings">
+                <MobStaticpage urlslug="departmentbuildings" />
+              </Route>
+              <Route path="/phdongoing">
+                <MobStaticpage urlslug="phdongoing" />
+              </Route>
+              <Route path="/phdawarded">
+                <MobStaticpage urlslug="phdawarded" />
+              </Route>
+              <Route path="/">
+                { this.mobindexpage() }
+              </Route>
+            </Switch>
+          <Primaryfooter />
+        </Router> 
       );
     } else {
       return (
         <Router>
-          <div id="bg" style={{ width: "100%" }}>
+          <div id="bg">
             <PrimaryNavBar />
               <Switch>
                 <Route path="/news">
                   <Newspagecomp />
                 </Route>
                 <Route path="/btech">
-                  <Academics heading="B Tech" acadurl="btech" />
+                  <Academics heading="B Tech" acadurl="btech" classname="acadbody" />
                 </Route>
                 <Route path="/mtech">
-                  <Academics heading="M Tech" acadurl="mtech" />
+                  <Academics heading="M Tech" acadurl="mtech" classname="acadbody" />
                 </Route>
                 <Route path="/phd">
-                  <Academics heading="PhD" acadurl="phd" />
+                  <Academics heading="PhD" acadurl="phd" classname="acadbody" />
                 </Route>
                 <Route path="/faculty">
                   <Facultyapp />
