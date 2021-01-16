@@ -17,6 +17,8 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import CircularProgress from '@material-ui/core/CircularProgress';
+import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
+import logo from '../person.jpg';
 import "./faculty.css";
 
 interface FacultyDetails {
@@ -53,7 +55,15 @@ interface topass {
   details: FacultyDetails[]
 }
 
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    content: {
+      margin:"0px"
+    }
+  })
+);
 function RightCard(faculty: FacultyDetails) {
+  const classes = useStyles();
   function showcards(cards: Section[] | undefined){
     if (cards) {
       return(
@@ -63,9 +73,13 @@ function RightCard(faculty: FacultyDetails) {
             <div>
               <Accordion>
                 <AccordionSummary
+                classes={{
+                  content: classes.content
+                }}
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel1a-content"
                   id="panel1a-header"
+                  style={{marginTop:"10px"}}
                 >
                   <h3>{ pobj.heading }</h3>
                 </AccordionSummary>
@@ -87,66 +101,62 @@ function RightCard(faculty: FacultyDetails) {
     
   }
   return (
-  <Card variant="outlined">
+  <Card variant="outlined" style={{fontFamily: "Karla,sans-serif",}}>
     <CardContent>
-      <Typography variant="h4"> {faculty.designation} </Typography>
+      <div style={{display:"flex",flexDirection:"column",alignItems:"center", marginBottom:"20px",marginTop:"15px"}}>
+    <Typography variant="h4" style={{fontFamily: "Montserrat,sans-serif", fontWeight:"bolder"}}> {faculty.display_name} </Typography>
+      <Typography variant="h5" > {faculty.designation} </Typography>
+      </div>
       <div
         style={{
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          marginBottom:"15px"
         }}
       >
-        <CardMedia>
-          <img src={faculty.profile_pic} style={{ width: "100px" }} alt={"Faculty"} />
-        </CardMedia>
+        {faculty.profile_pic==" "?
+            <CardMedia><img src={logo} style={{ height: "125px" }} alt={"Faculty"} /></CardMedia>
+            :
+            <CardMedia><img src={faculty.profile_pic} style={{ width: "125px" }} alt={"Faculty"} /></CardMedia>}
       </div>
       <TableContainer>
         <Table aria-label="simple table">
           <TableBody>
             <TableRow>
               <TableCell component="th" scope="row">
-                <Typography variant="h5"> Name </Typography>
+                <Typography variant="h6"> Room </Typography>
               </TableCell>
               <TableCell align="left">
                 {" "}
-                <Typography variant="h5"> {faculty.display_name} </Typography>
+                <Typography variant="h6" > {faculty.room} </Typography>
               </TableCell>
             </TableRow>
             <TableRow>
               <TableCell component="th" scope="row">
-                <Typography variant="h5"> Room </Typography>
+                <Typography variant="h6"> Email </Typography>
               </TableCell>
               <TableCell align="left">
                 {" "}
-                <Typography variant="h5"> {faculty.room} </Typography>
+                <a href={"mailto:"+faculty.email}><Typography variant="h6" style={{fontWeight:"bold",color:"#26a69a"}}> {faculty.email} </Typography></a>
               </TableCell>
             </TableRow>
             <TableRow>
               <TableCell component="th" scope="row">
-                <Typography variant="h5"> Email </Typography>
+                <Typography variant="h6"> Phone </Typography>
               </TableCell>
               <TableCell align="left">
                 {" "}
-                <Typography variant="h5"> {faculty.email} </Typography>
+                <Typography variant="h6" style={{fontWeight:"bold"}}> {faculty.phone} </Typography>
               </TableCell>
             </TableRow>
             <TableRow>
               <TableCell component="th" scope="row">
-                <Typography variant="h5"> Phone </Typography>
+                <Typography variant="h6"> Areas of Interest </Typography>
               </TableCell>
               <TableCell align="left">
                 {" "}
-                <Typography variant="h5"> {faculty.phone} </Typography>
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell component="th" scope="row">
-                <Typography variant="h5"> Areas of Interest </Typography>
-              </TableCell>
-              <TableCell align="left">
-                {" "}
-                <Typography variant="h5"> {faculty.aoi} </Typography>
+                <Typography variant="h6" > {faculty.aoi} </Typography>
               </TableCell>
             </TableRow>
           </TableBody>
@@ -160,7 +170,7 @@ function RightCard(faculty: FacultyDetails) {
 
 function LeftTabCard(faculty: FacultyDetails) {
   return (
-  <div className={"fac"}>
+  
     <Card
       variant="outlined"
       onClick={() => {
@@ -180,14 +190,19 @@ function LeftTabCard(faculty: FacultyDetails) {
       >
         <CardContent style={{ padding: "5px" }}>
           <div style={{ display: "flex", flexDirection: "row" }}>
-            <CardMedia><img src={faculty.profile_pic} style={{ height: "100px" }} alt={"Faculty"} /></CardMedia>
+            <div style={{display:"flex", alignItems:"center"}}>
+            {faculty.profile_pic==" "?
+            <CardMedia><img src={logo} style={{ height: "100px" }} alt={"Faculty"} /></CardMedia>
+            :
+            <CardMedia><img src={faculty.profile_pic} style={{ width: "100px" }} alt={"Faculty"} /></CardMedia>}
+            </div>
             <div>
               <TableContainer>
-                <Table aria-label="simple table">
+              <Table size="small" aria-label="a dense table">
                   <TableRow>
                     <TableCell align="left">
                       {" "}
-                      <Typography variant="h6"> {faculty.display_name} </Typography>
+                      <Typography variant="h5" style={{fontFamily:"Montserrat",fontWeight:"bolder"}}> {faculty.display_name} </Typography>
                     </TableCell>
                   </TableRow>
                   <TableBody>
@@ -217,7 +232,6 @@ function LeftTabCard(faculty: FacultyDetails) {
         </CardContent>
       </CardActionArea>
     </Card>
-  </div>
   );
 }
 
