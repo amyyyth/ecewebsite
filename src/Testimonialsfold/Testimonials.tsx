@@ -10,44 +10,49 @@ import Card from "@material-ui/core/Card";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 
+import Testi1 from "../Mediafold/testi1.jpg"
+import Testi2 from "../Mediafold/testi2.jpg"
+import Testi3 from "../Mediafold/testi3.jpg"
+import Testi4 from "../Mediafold/testi4.jpg"
+import Testi5 from "../Mediafold/testi5.jpg"
+
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const tutorialSteps = [
-  //datas for the testimoniel
   {
-    label: "Name1",
-    imgPath:
-      "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60",
+    label: "Aamiya Jeshai",
+    job: "Graduate Engineer Trainee, NOKIA",
+    imgPath: Testi1,
     imgdef:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione a at esse. Tempora facilis amet nam voluptatem. Nulla quidem enim odio quas itaque vero soluta, ut aperiam, voluptates, cumque doloremque."
+      "Faculties having years of expertise on various topics of ECE make learning experience special and flawless. Department always puts in continuous efforts to offer courses demanded by the industrial standards and to engage students in productive learning activities."
   },
   {
-    label: "Name2",
-    imgPath:
-      "https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60",
+    label: "Meghana Hari",
+    job: "Applications Engineer, Oracle India Private Ltd.",
+    imgPath: Testi2,
     imgdef:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione a at esse. Tempora facilis amet nam voluptatem. Nulla quidem enim odio quas itaque vero soluta, ut aperiam, voluptates, cumque doloremque.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione a at esse. Tempora facilis amet nam voluptatem. Nulla quidem enim odio quas itaque vero soluta, ut aperiam, voluptates, cumque doloremque."
+      "When we step out from a school to a College we are of the impression that we are on our own and unlike in our school there is anybody to handhold us. But when I stepped into NITC my experience was quite different. The faculty and staffs of my department were always available to support us, to guide us and clear our doubts even beyond office hours. 24x7 lab facilities provided by the department was good relief for us, with our tight academic schedules, thanks to the support and commitment of the lab staffs, who were always with us at challenging times."
   },
   {
-    label: "Name3",
-    imgPath:
-      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80",
+    label: "R. S. Prasobh Sankar",
+    job: " Pursuing Ph. D, Department of ECE Indian Institute of Science Bangalore.",
+    imgPath: Testi3,
     imgdef:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione a at esse. Tempora facilis amet nam voluptatem. Nulla quidem enim odio quas itaque vero soluta, ut aperiam, voluptates, cumque doloremque."
+      "I had one of the best four years of my life during my B. Tech in ECE at NIT Calicut.  The faculties are very knowledgeable and put a lot of effort into teaching. They are very approachable and never hesitate to go that extra mile to make our journey better. The excellent level of academics, lab facilities, and the constant encouragement to do our best often lead to international level publications even at an undergraduate level. I can proudly say that the Department of ECE, NITC is one of the best in our country and leads to the overall development of our self, a fact which is reiterated by the ever-increasing list of success stories of our alumnus."
   },
   {
-    label: "Name4",
-    imgPath:
-      "https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=400&h=250&q=60",
+    label: "Swetha A",
+    job: "Software Engineer at Microsoft India",
+    imgPath: Testi4,
     imgdef:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione a at esse. Tempora facilis amet nam voluptatem. Nulla quidem enim odio quas itaque vero soluta, ut aperiam, voluptates, cumque doloremque."
+      "The Department with its supportive faculty has motivated me to explore and understand the various core subjects as well choose from a variety of electives that caters to different fields of interests. The labs as part of the curriculum helped me gain more insight into the domain with the challenges met as part of the experiment giving hands on experience and the help and support provided to guide us through the various projects gave a real eye opener as to how the textbook concepts fall in place in the real world scenario. Being one of the class representatives of my batch for over 4 semesters, I vouch that the facilities offered by the department right from the classrooms to the labs which we could utilise even outside the lab hours, the department level festivities, Industrial visit bringing cheer and the faculty who were supportive and guided us in the right direction for the 4 years that moulded us from a student out from school to a better person equipped with technical knowledge and life skills, I am lucky to be an alumnus from ECED, NITC."
   },
   {
-    label: "Name5",
-    imgPath:
-      "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60",
+    label: "Umamaheswaran S",
+    job: "Firmware Engineer at Itron India Pvt Ltd",
+    imgPath: Testi5,
     imgdef:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione a at esse. Tempora facilis amet nam voluptatem. Nulla quidem enim odio quas itaque vero soluta, ut aperiam, voluptates, cumque doloremque."
+      "The four years that I spent in the ECE Department gave me lot of memories to cherish for a life time.  I received immense help and support from faculties as well as other staffs all along the course particularly during the final year Major Project.  The academic curriculum is very well designed so as to impart the right amount of theoretical as well as practical knowledge to the students."
   }
 ];
 
@@ -60,7 +65,6 @@ const useStyles = makeStyles(theme => ({
     alignItems: "center",
     height: 50,
     paddingLeft: theme.spacing(4),
-    // backgroundColor: theme.palette.background.default
     backgroundColor: theme.palette.background.default
   },
   img: {
@@ -72,7 +76,6 @@ const useStyles = makeStyles(theme => ({
     position: "relative"
   },
   outcard: {
-    //the blue box containing everything
     backgroundColor: "#fefefe",
     height: "300px",
     paddingTop: 0,
@@ -80,15 +83,12 @@ const useStyles = makeStyles(theme => ({
     paddingRight: 20,
     paddingBottom: 50,
     borderRadius: 10,
-    // padding: 20,
     margin: "2%",
     textAlign: "center",
     overflow: "hidden"
-    //boxShadow: {"rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"},
   },
 
   incard: {
-    //the box containing black,brown&green divs
     width: "100%",
     height: "90%",
     display: "flex",
@@ -101,15 +101,12 @@ const useStyles = makeStyles(theme => ({
   },
 
   imgblock: {
-    //containing black and brown boxes
     width: "17%",
     height: "100%",
     position: "relative",
     left: "-10%"
-    // maxWidth: '180px'
   },
   imgdiv: {
-    //blackbox
     backgroundColor: "none",
     width: "100%",
     height: "70%",
@@ -118,7 +115,6 @@ const useStyles = makeStyles(theme => ({
     alignItems: "center"
   },
   namediv: {
-    //brownbox
     backgroundColor: "none",
     width: "100%",
     height: "30%",
@@ -130,7 +126,6 @@ const useStyles = makeStyles(theme => ({
     top: "-1%"
   },
   contentdiv: {
-    //greenbox
     backgroundColor: "none",
     display: "flex",
     width: "83%",
@@ -144,6 +139,11 @@ const useStyles = makeStyles(theme => ({
     position: "relative",
     left: "-5%",
     top: "-5%"
+  },
+  jobitem: {
+    position: "absolute",
+    bottom: "5px",
+    right: "5px"
   }
 }));
 
@@ -201,6 +201,9 @@ function SwipeableTextMobileStepper() {
                 </div>
                 <div className={classes.contentdiv}>
                   <p className="imgtxt">{tutorialSteps[activeStep].imgdef}</p>
+                  <div className={classes.jobitem}>
+                    <Typography>{tutorialSteps[activeStep].job}</Typography>
+                  </div>
                 </div>
               </div>
             </Card>

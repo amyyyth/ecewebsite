@@ -5,6 +5,7 @@ import CardContent from "@material-ui/core/CardContent";
 
 interface AppProps {
   url_slug: string
+  child_url: string
 }
 interface AppState {
   apidata: {
@@ -31,6 +32,10 @@ export default class Primarynews extends Component<AppProps,AppState> {
       }).catch(error=>{console.log("Did not get News headings")})
   };
 
+  mapfunc = (obj: {heading: string},index: number)=>{
+    return(<li key={index}><a href={"/"+this.props.child_url}><Typography variant="h6">{obj.heading}</Typography></a></li>)
+  }
+
   render() {
     return (
       <Card id="qlinksa" style={{padding:"15px"}}>
@@ -39,9 +44,7 @@ export default class Primarynews extends Component<AppProps,AppState> {
             <ul>
             {
               this.state.apidata.data.map(
-                function (obj,index){
-                  return (<li key={index}><a href="/news"><Typography variant="h6">{obj.heading}</Typography></a></li>);
-                }
+                this.mapfunc
               )
             }
             </ul>

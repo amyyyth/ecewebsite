@@ -3,7 +3,9 @@ import { CarouselProvider, Slider, Slide } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-interface AppProps {}
+interface AppProps {
+  url_slug: string
+}
 interface AppState {
   imgs: {cimgs: {img: string}[]},
   totalimgs: number,
@@ -21,7 +23,7 @@ export default class MobileCarousel extends Component<AppProps,AppState> {
   };
 
   componentDidMount(){
-    fetch('https://eced.herokuapp.com/backend/carousel/getimages/',
+    fetch('https://eced.herokuapp.com/backend/'+this.props.url_slug+'/getimages/',
       {method: 'GET'}
     ).then(
       response => response.json()

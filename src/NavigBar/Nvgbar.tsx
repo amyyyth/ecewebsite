@@ -295,6 +295,7 @@ export default function PrimaryNavBar() {
                     aria-haspopup="true"
                     color="secondary"
                     className={classes.navButton}
+                    href="/alumni"
                   >
                     ALUMNI
                   </Button>
@@ -316,8 +317,9 @@ export default function PrimaryNavBar() {
                     aria-controls="simple-menu"
                     aria-haspopup="true"
                     color="secondary"
+                    href="https://eced.herokuapp.com/backend/people/login/"
                   >
-                    <a href="https://eced.herokuapp.com/backend/people/login/"><AccountCircleIcon /></a>
+                    <AccountCircleIcon />
                   </Button>
                 </div>
               </Box>

@@ -26,11 +26,10 @@ import SwipeableTextMobileStepper from './Testimonialsfold/Testimonials';
 import MobLabslist from "./Labsfold/Labslistpagemob";
 import MobLabpage from "./Labsfold/Labspecificmob";
 import MobStaticpage from "./Staticpagefold/Staticappmob";
+import Alumni from "./Alumnifold/Alumnipage";
 
 interface AppProps {}
-interface AppState {
-  name: string;
-}
+interface AppState {}
 
 // ------------ THEME COLOR ---------------------
 // #062a51
@@ -59,12 +58,6 @@ const theme = createMuiTheme({
 // -----------------------------------------------
 
 class App extends Component<AppProps, AppState> {
-  constructor(props:any) {
-    super(props);
-    this.state = {
-      name: "React"
-    };
-  }
 
   indexpage = () => {
     return (
@@ -73,7 +66,7 @@ class App extends Component<AppProps, AppState> {
           <PrimaryCarousel url_slug="carousel" />
         </div>
         <div id="botcardsa">
-          <Container style={{  display: "flex"}}>
+          <Container style={{ display: "flex"}}>
             <div id="lmain">
               <PrimaryDepro />
             </div>
@@ -82,7 +75,7 @@ class App extends Component<AppProps, AppState> {
                 <Primaryqlinks />
               </div>
               <div id="newsindex">
-                <Primarynews url_slug="newsblog" />
+                <Primarynews url_slug="newsblog" child_url="news" />
               </div>
             </div>
           </Container>
@@ -110,7 +103,7 @@ class App extends Component<AppProps, AppState> {
         <div id="botcardsa">
         <Container style={{  display: "flex", flexDirection:"column"}}>
         <div id="newsindex">
-          <Primarynews url_slug="newsblog" />
+          <Primarynews url_slug="newsblog" child_url="news" />
         </div>
         <div id="mobdepro">
           <PrimaryDepro />
@@ -134,8 +127,11 @@ class App extends Component<AppProps, AppState> {
           <MobileNavBar />
             <Switch>
               <Route path="/news">
-                <Newspagecomp />
+                <Newspagecomp url_slug="newsblog" />
               </Route>
+              <Route path="/alumninews">
+                  <Newspagecomp url_slug="alumni" />
+                </Route>
               <Route path="/btech">
                 <Academics heading="B Tech" acadurl="btech" classname="acadbodymob" />
               </Route>
@@ -147,6 +143,9 @@ class App extends Component<AppProps, AppState> {
               </Route>
               <Route path="/faculty">
                 <Facultyapp />
+              </Route>
+              <Route path="/alumni">
+                <Alumni isMobile={true} />
               </Route>
               <Route path="/labs/:labid">
                 <MobLabpage />
@@ -195,7 +194,10 @@ class App extends Component<AppProps, AppState> {
             <PrimaryNavBar />
               <Switch>
                 <Route path="/news">
-                  <Newspagecomp />
+                  <Newspagecomp url_slug="newsblog" />
+                </Route>
+                <Route path="/alumninews">
+                  <Newspagecomp url_slug="alumni" />
                 </Route>
                 <Route path="/btech">
                   <Academics heading="B Tech" acadurl="btech" classname="acadbody" />
@@ -208,6 +210,9 @@ class App extends Component<AppProps, AppState> {
                 </Route>
                 <Route path="/faculty">
                   <Facultyapp />
+                </Route>
+                <Route path="/alumni">
+                  <Alumni isMobile={false} />
                 </Route>
                 <Route path="/labs/:labid">
                   <Labpage />

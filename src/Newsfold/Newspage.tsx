@@ -3,7 +3,9 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Container from '@material-ui/core/Container';
 
-interface AppProps {}
+interface AppProps {
+  url_slug: string
+}
 interface AppState {
   apidata: {
       data: {
@@ -29,7 +31,7 @@ export default class Newspagecomp extends Component<AppProps,AppState> {
   };
 
   componentDidMount(){
-    fetch('https://eced.herokuapp.com/backend/newsblog/getnews/1/',
+    fetch('https://eced.herokuapp.com/backend/'+this.props.url_slug+'/getnews/1/',
       {method: 'GET'}
     ).then(
       response => response.json()

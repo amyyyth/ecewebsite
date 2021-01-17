@@ -9,8 +9,7 @@ interface AppProps {
 interface AppState {
   imgs: {
     cimgs: {
-      enc_img: string,
-      date_uploaded: string
+      enc_img: string
     }[]
   },
   totalimgs: number,
@@ -25,8 +24,7 @@ export default class PrimaryCarousel extends Component<AppProps,AppState> {
     this.state = {
       imgs: {
         cimgs: [{
-          enc_img: " ",
-          date_uploaded: " "
+          enc_img: " "
         }]},
       totalimgs: 1,
       isLoadState: false,
