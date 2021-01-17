@@ -104,6 +104,8 @@ class App extends Component<AppProps, AppState> {
         <div id="carsamob">
           <PrimaryCarousel />
         </div>
+        <div id="botcardsa">
+        <Container style={{  display: "flex", flexDirection:"column"}}>
         <div id="newsindex">
           <Primarynews />
         </div>
@@ -114,6 +116,8 @@ class App extends Component<AppProps, AppState> {
           <Box display="flex">
             <Primarymv />
           </Box>
+        </div>
+        </Container>
         </div>
         <SwipeableTextMobileStepper />
       </div>

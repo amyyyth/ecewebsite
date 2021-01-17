@@ -17,17 +17,17 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     logo: {
-      height: "40px",
+      height: "50px",
       filter: "invert(100%)"
     },
     groupa: {
       paddingLeft: "24px",
-      width: "100%"
+      width: "100%",
     },
     headinga: {
       marginBottom: "5px",
-      size: "20px"
-    }
+      fontFamily: "Montserrat,sans-serif",
+    },
   })
 );
 
@@ -64,7 +64,7 @@ export default function MobileNavBar() {
             >
               <MenuIcon />
             </IconButton>
-            <Drawer anchor="right" open={dstate} onClose={toggleDrawer(true)}>
+            <Drawer anchor="right" open={dstate} onClose={toggleDrawer(true)} style={{fontFamily:"Karla"}}>
               <Accordion>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}

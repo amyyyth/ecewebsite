@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme: Theme) =>
     navButton: {
       fontFamily: "Karla,sans-serif",
       fontWeight: "bolder",
-      fontSize: "12px",
+      fontSize: "14px",
     },
   })
 );
