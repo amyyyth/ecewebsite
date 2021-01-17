@@ -41,7 +41,7 @@ export default class Academics extends Component<AppProps,AppState> {
         <h1 style={{ paddingLeft: "40px", paddingTop: "40px", color: "#03205c" }}>
           {this.props.heading}
         </h1>
-        <Container className={this.props.classname}>
+        <Container className={this.props.classname} maxWidth="md">
           <Card className="pdbga">
               <CardContent>
                   <div className={ "ql-container ql-snow" }>
