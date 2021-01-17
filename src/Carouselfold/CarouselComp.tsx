@@ -2,11 +2,17 @@ import { Component } from "react";
 import { CarouselProvider, Slider, Slide } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { isMobile } from "react-device-detect";
 
-interface AppProps {}
+interface AppProps {
+  url_slug: string
+}
 interface AppState {
-  imgs: {cimgs: {img: string}[]},
+  imgs: {
+    cimgs: {
+      enc_img: string,
+      date_uploaded: string
+    }[]
+  },
   totalimgs: number,
   isLoadState: boolean,
   width:number,
@@ -17,7 +23,11 @@ export default class PrimaryCarousel extends Component<AppProps,AppState> {
   constructor(props: any){
     super(props);
     this.state = {
-      imgs: {cimgs: [{img: ""}]},
+      imgs: {
+        cimgs: [{
+          enc_img: " ",
+          date_uploaded: " "
+        }]},
       totalimgs: 1,
       isLoadState: false,
        width: 0, 
@@ -29,7 +39,7 @@ export default class PrimaryCarousel extends Component<AppProps,AppState> {
   componentDidMount(){
     this.updateWindowDimensions();
   window.addEventListener('resize', this.updateWindowDimensions);
-    fetch('https://eced.herokuapp.com/backend/carousel/getimages/',
+    fetch('https://eced.herokuapp.com/backend/'+this.props.url_slug+'/getimages/',
       {method: 'GET'}
     ).then(
       response => response.json()
@@ -49,9 +59,9 @@ export default class PrimaryCarousel extends Component<AppProps,AppState> {
   imgSliders = () =>{
     let da = this.state.imgs.cimgs.map(function(objs,index){
       return (
-        <Slide index={index}>
+        <Slide index={index} key={index}>
           <div style={{width:"100%",height:"100%"}}>
-            <img style={{objectFit: "cover", objectPosition:"0 30%"}} height={"100%"} width={"100%"} src={objs.img} />                
+            <img style={{objectFit: "cover", objectPosition:"0 30%"}} height={"100%"} width={"100%"} src={objs.enc_img} alt={"Error with img"} />                
           </div>
         </Slide>)
         });

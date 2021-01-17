@@ -8,7 +8,7 @@ export default function PrimaryDepro() {
   return (
     <Card className="pdbga">
       <CardContent>
-        <Typography variant="h3" style={{fontFamily:"Karla,sans-serif"}}>DEPARTMENT PROFILE</Typography>
+        <Typography variant="h4" style={{fontFamily:"Karla,sans-serif"}}>DEPARTMENT PROFILE</Typography>
         <Typography variant="h6" style={{fontFamily:"Montserrat,sans-serif",marginTop:"5vh"}}>
           The Department of Electronics and Communication Engineering, National
           Institute of Technology, Calicut, is involved in providing quality

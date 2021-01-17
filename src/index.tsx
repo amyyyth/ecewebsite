@@ -33,10 +33,15 @@ interface AppState {
 }
 
 // ------------ THEME COLOR ---------------------
+// #062a51
+// #26a69a
 
 const theme = createMuiTheme({
   typography:{
     fontFamily: "Karla,sans-serif,Montserrat",
+    h6: {
+      fontSize: "15px"
+    }
   },
   palette: {
     primary: {
@@ -46,7 +51,7 @@ const theme = createMuiTheme({
       main: "#fffff0"
     },
     text: {
-      primary: "#26a69a"
+      primary: "#062a51"
     }
   }
 });
@@ -65,11 +70,9 @@ class App extends Component<AppProps, AppState> {
     return (
       <div>
         <div id="carsa">
-          <PrimaryCarousel />
+          <PrimaryCarousel url_slug="carousel" />
         </div>
-
         <div id="botcardsa">
-
           <Container style={{  display: "flex"}}>
             <div id="lmain">
               <PrimaryDepro />
@@ -79,7 +82,7 @@ class App extends Component<AppProps, AppState> {
                 <Primaryqlinks />
               </div>
               <div id="newsindex">
-                <Primarynews />
+                <Primarynews url_slug="newsblog" />
               </div>
             </div>
           </Container>
@@ -102,12 +105,12 @@ class App extends Component<AppProps, AppState> {
     return (
       <div id="bg" style={{ width: "100%" }}>
         <div id="carsamob">
-          <PrimaryCarousel />
+          <PrimaryCarousel url_slug="carousel" />
         </div>
         <div id="botcardsa">
         <Container style={{  display: "flex", flexDirection:"column"}}>
         <div id="newsindex">
-          <Primarynews />
+          <Primarynews url_slug="newsblog" />
         </div>
         <div id="mobdepro">
           <PrimaryDepro />

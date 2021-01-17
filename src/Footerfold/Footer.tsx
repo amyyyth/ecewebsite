@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Divider from "@material-ui/core/Divider";
-import { isMobile, isMobileOnly } from "react-device-detect";
+import { isMobile } from "react-device-detect";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
