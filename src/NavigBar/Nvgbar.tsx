@@ -68,9 +68,11 @@ export default function PrimaryNavBar() {
             />
           </div>
           <div className={classes.groupa}>
+            <a href="/">
             <h2 className={classes.headinga}>
               DEPARTMENT OF ELECTRONICS AND COMMUNICATION ENGINEERING
             </h2>
+            </a>
             <div>
               <p className={classes.nitc}>
                 NATIONAL INSTITUTE OF TECHNOLOGY CALICUT

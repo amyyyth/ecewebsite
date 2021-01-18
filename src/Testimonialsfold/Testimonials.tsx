@@ -200,7 +200,7 @@ function SwipeableTextMobileStepper() {
                   </div>
                 </div>
                 <div className={classes.contentdiv}>
-                  <p className="imgtxt">{tutorialSteps[activeStep].imgdef}<br/><br/>{tutorialSteps[activeStep].job}</p>
+                  <p className="imgtxt">{tutorialSteps[activeStep].imgdef}<br/><br/><b>{tutorialSteps[activeStep].job}</b></p>
                 </div>
               </div>
             </Card>

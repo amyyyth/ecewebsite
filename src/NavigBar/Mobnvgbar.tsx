@@ -53,9 +53,11 @@ export default function MobileNavBar() {
             />
           </div>
           <div className={classes.groupa}>
+            <a href="/">
             <h2 className={classes.headinga}>
               DEPARTMENT OF ELECTRONICS AND COMMUNICATION ENGINEERING
             </h2>
+            </a>
           </div>
           <div>
             <IconButton
