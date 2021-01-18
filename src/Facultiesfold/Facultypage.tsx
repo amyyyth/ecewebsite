@@ -115,7 +115,7 @@ function RightCard(faculty: FacultyDetails) {
           marginBottom:"15px"
         }}
       >
-        {faculty.profile_pic===" "?
+        {faculty.profile_pic===""?
             <CardMedia><img src={logo} style={{ height: "125px" }} alt={"Faculty"} /></CardMedia>
             :
             <CardMedia><img src={faculty.profile_pic} style={{ width: "125px" }} alt={"Faculty"} /></CardMedia>}
@@ -191,7 +191,7 @@ function LeftTabCard(faculty: FacultyDetails) {
         <CardContent style={{ padding: "5px" }}>
           <div style={{ display: "flex", flexDirection: "row" }}>
             <div style={{display:"flex", alignItems:"center"}}>
-            {faculty.profile_pic===" "?
+            {faculty.profile_pic===""?
             <CardMedia><img src={logo} style={{ height: "100px" }} alt={"Faculty"} /></CardMedia>
             :
             <CardMedia><img src={faculty.profile_pic} style={{ width: "100px" }} alt={"Faculty"} /></CardMedia>}

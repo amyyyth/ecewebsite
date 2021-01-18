@@ -141,7 +141,7 @@ const useStyles = makeStyles(theme => ({
     top: "-5%"
   },
   jobitem: {
-    position: "absolute",
+    position: "relative",
     bottom: "5px",
     right: "5px"
   }
@@ -200,10 +200,7 @@ function SwipeableTextMobileStepper() {
                   </div>
                 </div>
                 <div className={classes.contentdiv}>
-                  <p className="imgtxt">{tutorialSteps[activeStep].imgdef}</p>
-                  <div className={classes.jobitem}>
-                    <Typography>{tutorialSteps[activeStep].job}</Typography>
-                  </div>
+                  <p className="imgtxt">{tutorialSteps[activeStep].imgdef}<br/><br/>{tutorialSteps[activeStep].job}</p>
                 </div>
               </div>
             </Card>

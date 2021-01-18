@@ -58,7 +58,7 @@ export default function Primaryfooter() {
           <Box display="flex"  justifyContent="flex-end">
           <Box display="flex" flexDirection="column">
             <div className={classes.cright} >
-              <p>Made with ❤️ from ECED Website team</p>
+              <p>Made with ❤️ from <a style={{color:"black", textDecorationLine: "underline"}} href="/credits">ECED Website team</a></p>
             </div>
           </Box>
           </Box>

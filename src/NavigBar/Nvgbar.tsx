@@ -284,6 +284,7 @@ export default function PrimaryNavBar() {
                     aria-haspopup="true"
                     color="secondary"
                     className={classes.navButton}
+                    href="/activities"
                   >
                     ACTIVITIES
                   </Button>
