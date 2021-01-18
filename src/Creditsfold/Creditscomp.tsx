@@ -13,6 +13,7 @@ import Reactlogo from "./React.png";
 import Pythonlogo from "./Python.png";
 import Tslogo from "./Ts.png";
 import Muilogo from "./materialui.png";
+import Figmalogo from "./figma.svg";
 
 import Suraj from "./suraj.jpg";
 import Vimal from "./vimal.jpg";
@@ -22,8 +23,6 @@ import Devimg3 from "./devimg(3).jpeg";
 import Devimg4 from "./devimg(4).jpeg";
 import Devimg5 from "./devimg(5).jpeg";
 import Devimg6 from "./devimg(6).jpeg";
-
-
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -62,7 +61,7 @@ export default function Creditspage() {
                 <CardContent>
                     <div className={classes.bcontent}>
                         <Typography variant="h5" style={{fontFamily:"Montserrat,sans-serif",marginTop:"5vh"}}>
-                        Advisors
+                        Advisors and Project Managers
                         </Typography>
                         <Paper component="ul" className={classes.root}>
                             <li>
@@ -83,11 +82,32 @@ export default function Creditspage() {
                                 color="primary"
                                 />
                             </li>
+                            <li>
+                                <Chip
+                                size="medium"
+                                avatar={<Avatar alt="Deepth"  >D</Avatar>}
+                                label="Dr. Deepthi P.P. (HOD)"
+                                className={classes.chip}
+                                color="primary"
+                                />
+                            </li>
+                            <a href="/faculty">
+                            <li>
+                                <Chip
+                                size="medium"
+                                avatar={<Avatar alt="All"  >All</Avatar>}
+                                label="All Faculties"
+                                className={classes.chip}
+                                color="primary"
+                                />
+                            </li>
+                            </a>
                         </Paper>
                     </div>
+                    <Divider />
                     <div className={classes.bcontent}>
                         <Typography variant="h5" style={{fontFamily:"Montserrat,sans-serif",marginTop:"5vh"}}>
-                        Project Head
+                        Project Lead
                         </Typography>
                         <Paper component="ul" className={classes.root}>
                             <li>
@@ -214,9 +234,19 @@ export default function Creditspage() {
                     </div>
                     <Divider />
                     <div className={classes.bcontent}>
+                        <div className="techstack">
                         <Typography variant="h5" style={{fontFamily:"Montserrat,sans-serif",marginTop:"5vh"}}>
                         Design
+                        <Chip
+                            variant="outlined"
+                            size="medium"
+                            avatar={<Avatar alt="Figma logo" src={Figmalogo}  />}
+                            label="Figma"
+                            className={classes.techchip}
+                            color="primary"
+                        />
                         </Typography>
+                        </div>
                         <Paper component="ul" className={classes.root}>
                             <li>
                                 <Chip
@@ -239,17 +269,8 @@ export default function Creditspage() {
                             <li>
                                 <Chip
                                 size="medium"
-                                avatar={<Avatar alt="Sharan" src={Devimg1}  />}
-                                label="Sharan"
-                                className={classes.chip}
-                                color="primary"
-                                />
-                            </li>
-                            <li>
-                                <Chip
-                                size="medium"
-                                avatar={<Avatar alt="Amit Kumar" src={Devimg4}  />}
-                                label="Amit Kumar"
+                                avatar={<Avatar alt="Adwaith" src={Devimg6}  />}
+                                label="Adwaith"
                                 className={classes.chip}
                                 color="primary"
                                 />

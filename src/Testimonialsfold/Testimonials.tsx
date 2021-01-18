@@ -35,7 +35,7 @@ const tutorialSteps = [
   },
   {
     label: "R. S. Prasobh Sankar",
-    job: " Pursuing Ph. D, Department of ECE Indian Institute of Science Bangalore.",
+    job: " Pursuing Ph. D at Department of ECE, Indian Institute of Science Bangalore.",
     imgPath: Testi3,
     imgdef:
       "I had one of the best four years of my life during my B. Tech in ECE at NIT Calicut.  The faculties are very knowledgeable and put a lot of effort into teaching. They are very approachable and never hesitate to go that extra mile to make our journey better. The excellent level of academics, lab facilities, and the constant encouragement to do our best often lead to international level publications even at an undergraduate level. I can proudly say that the Department of ECE, NITC is one of the best in our country and leads to the overall development of our self, a fact which is reiterated by the ever-increasing list of success stories of our alumnus."
