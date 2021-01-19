@@ -269,7 +269,7 @@ function Impfunction(dataFull: topass) {
         marginTop:"15px",
         padding: "0px",
         minHeight: "100vh",
-        maxHeight: "100vh",
+        maxHeight: "105vh",
         overflowY: "auto",
         justifyContent: "center",
       }}

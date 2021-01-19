@@ -57,8 +57,6 @@ const theme = createMuiTheme({
   }
 });
 
-// -----------------------------------------------
-
 class App extends Component<AppProps, AppState> {
 
   indexpage = () => {
