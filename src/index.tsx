@@ -26,17 +26,23 @@ import SwipeableTextMobileStepper from './Testimonialsfold/Testimonials';
 import MobLabslist from "./Labsfold/Labslistpagemob";
 import MobLabpage from "./Labsfold/Labspecificmob";
 import MobStaticpage from "./Staticpagefold/Staticappmob";
+import Alumni from "./Alumnifold/Alumnipage";
+import Activityapp from "./Activitiesfold/Activitiescomp";
+import Creditspage from "./Creditsfold/Creditscomp";
 
 interface AppProps {}
-interface AppState {
-  name: string;
-}
+interface AppState {}
 
 // ------------ THEME COLOR ---------------------
+// #062a51
+// #26a69a
 
 const theme = createMuiTheme({
   typography:{
     fontFamily: "Karla,sans-serif,Montserrat",
+    h6: {
+      fontSize: "15px"
+    }
   },
   palette: {
     primary: {
@@ -46,7 +52,7 @@ const theme = createMuiTheme({
       main: "#fffff0"
     },
     text: {
-      primary: "#26a69a"
+      primary: "#062a51"
     }
   }
 });
@@ -54,23 +60,15 @@ const theme = createMuiTheme({
 // -----------------------------------------------
 
 class App extends Component<AppProps, AppState> {
-  constructor(props:any) {
-    super(props);
-    this.state = {
-      name: "React"
-    };
-  }
 
   indexpage = () => {
     return (
       <div>
         <div id="carsa">
-          <PrimaryCarousel />
+          <PrimaryCarousel url_slug="carousel" />
         </div>
-
         <div id="botcardsa">
-
-          <Container style={{  display: "flex"}}>
+          <Container style={{ display: "flex"}}>
             <div id="lmain">
               <PrimaryDepro />
             </div>
@@ -79,7 +77,7 @@ class App extends Component<AppProps, AppState> {
                 <Primaryqlinks />
               </div>
               <div id="newsindex">
-                <Primarynews />
+                <Primarynews url_slug="newsblog" child_url="news" />
               </div>
             </div>
           </Container>
@@ -102,12 +100,12 @@ class App extends Component<AppProps, AppState> {
     return (
       <div id="bg" style={{ width: "100%" }}>
         <div id="carsamob">
-          <PrimaryCarousel />
+          <PrimaryCarousel url_slug="carousel" />
         </div>
         <div id="botcardsa">
         <Container style={{  display: "flex", flexDirection:"column"}}>
         <div id="newsindex">
-          <Primarynews />
+          <Primarynews url_slug="newsblog" child_url="news" />
         </div>
         <div id="mobdepro">
           <PrimaryDepro />
@@ -129,59 +127,71 @@ class App extends Component<AppProps, AppState> {
       return (
         <Router>
           <MobileNavBar />
-            <Switch>
-              <Route path="/news">
-                <Newspagecomp />
+          <Switch>
+            <Route path="/news">
+              <Newspagecomp url_slug="newsblog" />
+            </Route>
+            <Route path="/alumninews">
+                <Newspagecomp url_slug="alumni" />
               </Route>
-              <Route path="/btech">
-                <Academics heading="B Tech" acadurl="btech" classname="acadbodymob" />
-              </Route>
-              <Route path="/mtech">
-                <Academics heading="M Tech" acadurl="mtech" classname="acadbodymob" />
-              </Route>
-              <Route path="/phd">
-                <Academics heading="PhD" acadurl="phd" classname="acadbodymob" />
-              </Route>
-              <Route path="/faculty">
-                <Facultyapp />
-              </Route>
-              <Route path="/labs/:labid">
-                <MobLabpage />
-              </Route>
-              <Route path="/labs">
-                <MobLabslist />
-              </Route>
-              <Route path="/staff">
-                <MobStaticpage urlslug="staff" />
-              </Route>
-              <Route path="/adhoc">
-                <MobStaticpage urlslug="adhoc" />
-              </Route>
-              <Route path="/conferenceroom">
-                <MobStaticpage urlslug="conferenceroom" />
-              </Route>
-              <Route path="/areasofresearch">
-                <MobStaticpage urlslug="areasofresearch" />
-              </Route>
-              <Route path="/seminarhall">
-                <MobStaticpage urlslug="seminarhall" />
-              </Route>
-              <Route path="/departmentlibrary">
-                <MobStaticpage urlslug="departmentlibrary" />
-              </Route>
-              <Route path="/departmentbuildings">
-                <MobStaticpage urlslug="departmentbuildings" />
-              </Route>
-              <Route path="/phdongoing">
-                <MobStaticpage urlslug="phdongoing" />
-              </Route>
-              <Route path="/phdawarded">
-                <MobStaticpage urlslug="phdawarded" />
-              </Route>
-              <Route path="/">
-                { this.mobindexpage() }
-              </Route>
-            </Switch>
+            <Route path="/btech">
+              <Academics heading="B Tech" acadurl="btech" classname="acadbodymob" />
+            </Route>
+            <Route path="/mtech">
+              <Academics heading="M Tech" acadurl="mtech" classname="acadbodymob" />
+            </Route>
+            <Route path="/phd">
+              <Academics heading="PhD" acadurl="phd" classname="acadbodymob" />
+            </Route>
+            <Route path="/faculty">
+              <Facultyapp />
+            </Route>
+            <Route path="/alumni">
+              <Alumni isMobile={true} />
+            </Route>
+            <Route path="/labs/:labid">
+              <MobLabpage />
+            </Route>
+            <Route path="/labs">
+              <MobLabslist />
+            </Route>
+            <Route path="/staff">
+              <MobStaticpage urlslug="staff" />
+            </Route>
+            <Route path="/adhoc">
+              <MobStaticpage urlslug="adhoc" />
+            </Route>
+            <Route path="/conferenceroom">
+              <MobStaticpage urlslug="conferenceroom" />
+            </Route>
+            <Route path="/areasofresearch">
+              <MobStaticpage urlslug="areasofresearch" />
+            </Route>
+            <Route path="/seminarhall">
+              <MobStaticpage urlslug="seminarhall" />
+            </Route>
+            <Route path="/departmentlibrary">
+              <MobStaticpage urlslug="departmentlibrary" />
+            </Route>
+            <Route path="/departmentbuildings">
+              <MobStaticpage urlslug="departmentbuildings" />
+            </Route>
+            <Route path="/phdongoing">
+              <MobStaticpage urlslug="phdongoing" />
+            </Route>
+            <Route path="/phdawarded">
+              <MobStaticpage urlslug="phdawarded" />
+            </Route>
+            <Route path="/activities">
+              <Activityapp />
+            </Route>
+            <Route path="/credits">
+              <Creditspage />
+            </Route>
+            <Route path="/">
+              { this.mobindexpage() }
+            </Route>
+          </Switch>
           <Primaryfooter />
         </Router> 
       );
@@ -190,59 +200,71 @@ class App extends Component<AppProps, AppState> {
         <Router>
           <div id="bg">
             <PrimaryNavBar />
-              <Switch>
-                <Route path="/news">
-                  <Newspagecomp />
-                </Route>
-                <Route path="/btech">
-                  <Academics heading="B Tech" acadurl="btech" classname="acadbody" />
-                </Route>
-                <Route path="/mtech">
-                  <Academics heading="M Tech" acadurl="mtech" classname="acadbody" />
-                </Route>
-                <Route path="/phd">
-                  <Academics heading="PhD" acadurl="phd" classname="acadbody" />
-                </Route>
-                <Route path="/faculty">
-                  <Facultyapp />
-                </Route>
-                <Route path="/labs/:labid">
-                  <Labpage />
-                </Route>
-                <Route path="/labs">
-                  <Labslist />
-                </Route>
-                <Route path="/staff">
-                  <Staticpage urlslug="staff" />
-                </Route>
-                <Route path="/adhoc">
-                  <Staticpage urlslug="adhoc" />
-                </Route>
-                <Route path="/conferenceroom">
-                  <Staticpage urlslug="conferenceroom" />
-                </Route>
-                <Route path="/areasofresearch">
-                  <Staticpage urlslug="areasofresearch" />
-                </Route>
-                <Route path="/seminarhall">
-                  <Staticpage urlslug="seminarhall" />
-                </Route>
-                <Route path="/departmentlibrary">
-                  <Staticpage urlslug="departmentlibrary" />
-                </Route>
-                <Route path="/departmentbuildings">
-                  <Staticpage urlslug="departmentbuildings" />
-                </Route>
-                <Route path="/phdongoing">
-                  <Staticpage urlslug="phdongoing" />
-                </Route>
-                <Route path="/phdawarded">
-                  <Staticpage urlslug="phdawarded" />
-                </Route>
-                <Route path="/">
-                  {this.indexpage()}
-                </Route>
-              </Switch>
+            <Switch>
+              <Route path="/news">
+                <Newspagecomp url_slug="newsblog" />
+              </Route>
+              <Route path="/alumninews">
+                <Newspagecomp url_slug="alumni" />
+              </Route>
+              <Route path="/btech">
+                <Academics heading="B Tech" acadurl="btech" classname="acadbody" />
+              </Route>
+              <Route path="/mtech">
+                <Academics heading="M Tech" acadurl="mtech" classname="acadbody" />
+              </Route>
+              <Route path="/phd">
+                <Academics heading="PhD" acadurl="phd" classname="acadbody" />
+              </Route>
+              <Route path="/faculty">
+                <Facultyapp />
+              </Route>
+              <Route path="/alumni">
+                <Alumni isMobile={false} />
+              </Route>
+              <Route path="/labs/:labid">
+                <Labpage />
+              </Route>
+              <Route path="/labs">
+                <Labslist />
+              </Route>
+              <Route path="/staff">
+                <Staticpage urlslug="staff" />
+              </Route>
+              <Route path="/adhoc">
+                <Staticpage urlslug="adhoc" />
+              </Route>
+              <Route path="/conferenceroom">
+                <Staticpage urlslug="conferenceroom" />
+              </Route>
+              <Route path="/areasofresearch">
+                <Staticpage urlslug="areasofresearch" />
+              </Route>
+              <Route path="/seminarhall">
+                <Staticpage urlslug="seminarhall" />
+              </Route>
+              <Route path="/departmentlibrary">
+                <Staticpage urlslug="departmentlibrary" />
+              </Route>
+              <Route path="/departmentbuildings">
+                <Staticpage urlslug="departmentbuildings" />
+              </Route>
+              <Route path="/phdongoing">
+                <Staticpage urlslug="phdongoing" />
+              </Route>
+              <Route path="/phdawarded">
+                <Staticpage urlslug="phdawarded" />
+              </Route>
+              <Route path="/activities">
+                <Activityapp />
+              </Route>
+              <Route path="/credits">
+                <Creditspage />
+              </Route>
+              <Route path="/">
+                {this.indexpage()}
+              </Route>
+            </Switch>
             <Primaryfooter />
           </div>
         </Router>

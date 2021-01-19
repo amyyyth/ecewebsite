@@ -25,10 +25,10 @@ git push
 7. Send me a pull request
 
 Use the following commands to update your repository with latest main repository
-'''
+```
 git pull upstream
 git merge upstream/master
-'''
+```
 
 ### `npm start`
 
@@ -47,3 +47,7 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### License
+
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/) International License.

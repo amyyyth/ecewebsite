@@ -49,12 +49,15 @@ export default function MobileNavBar() {
             <img
               className={classes.logo}
               src="https://upload.wikimedia.org/wikipedia/en/d/d0/National_Institute_of_Technology%2C_Calicut_Logo.png"
+              alt="Nitc logo"
             />
           </div>
           <div className={classes.groupa}>
+            <a href="/">
             <h2 className={classes.headinga}>
               DEPARTMENT OF ELECTRONICS AND COMMUNICATION ENGINEERING
             </h2>
+            </a>
           </div>
           <div>
             <IconButton

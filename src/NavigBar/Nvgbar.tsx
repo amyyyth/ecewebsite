@@ -64,12 +64,15 @@ export default function PrimaryNavBar() {
             <img
               className={classes.logo}
               src="https://upload.wikimedia.org/wikipedia/en/d/d0/National_Institute_of_Technology%2C_Calicut_Logo.png"
+              alt="NITC logo"
             />
           </div>
           <div className={classes.groupa}>
+            <a href="/">
             <h2 className={classes.headinga}>
               DEPARTMENT OF ELECTRONICS AND COMMUNICATION ENGINEERING
             </h2>
+            </a>
             <div>
               <p className={classes.nitc}>
                 NATIONAL INSTITUTE OF TECHNOLOGY CALICUT
@@ -283,6 +286,7 @@ export default function PrimaryNavBar() {
                     aria-haspopup="true"
                     color="secondary"
                     className={classes.navButton}
+                    href="/activities"
                   >
                     ACTIVITIES
                   </Button>
@@ -294,6 +298,7 @@ export default function PrimaryNavBar() {
                     aria-haspopup="true"
                     color="secondary"
                     className={classes.navButton}
+                    href="/alumni"
                   >
                     ALUMNI
                   </Button>
@@ -315,8 +320,9 @@ export default function PrimaryNavBar() {
                     aria-controls="simple-menu"
                     aria-haspopup="true"
                     color="secondary"
+                    href="https://eced.herokuapp.com/backend/people/login/"
                   >
-                    <a href="https://eced.herokuapp.com/backend/people/login/"><AccountCircleIcon /></a>
+                    <AccountCircleIcon />
                   </Button>
                 </div>
               </Box>

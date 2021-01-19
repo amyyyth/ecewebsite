@@ -115,7 +115,7 @@ function RightCard(faculty: FacultyDetails) {
           marginBottom:"15px"
         }}
       >
-        {faculty.profile_pic==" "?
+        {faculty.profile_pic===""?
             <CardMedia><img src={logo} style={{ height: "125px" }} alt={"Faculty"} /></CardMedia>
             :
             <CardMedia><img src={faculty.profile_pic} style={{ width: "125px" }} alt={"Faculty"} /></CardMedia>}
@@ -191,7 +191,7 @@ function LeftTabCard(faculty: FacultyDetails) {
         <CardContent style={{ padding: "5px" }}>
           <div style={{ display: "flex", flexDirection: "row" }}>
             <div style={{display:"flex", alignItems:"center"}}>
-            {faculty.profile_pic==" "?
+            {faculty.profile_pic===""?
             <CardMedia><img src={logo} style={{ height: "100px" }} alt={"Faculty"} /></CardMedia>
             :
             <CardMedia><img src={faculty.profile_pic} style={{ width: "100px" }} alt={"Faculty"} /></CardMedia>}
@@ -239,7 +239,7 @@ function Impfunction(dataFull: topass) {
   const [filtered, setFiltered] = useState<[FacultyDetails | undefined]>([
     undefined,
   ]);
-  const [rId, setrId] = useState(1); // 0 id for HOD
+  const [rId, setrId] = useState(30); // id for HOD
   const [Query, setQuery] = useState("");
   const isOne = useMediaQuery({ query: "(max-width: 900px)" });
   const isTwo = useMediaQuery({ query: "(max-width: 730px)" });
@@ -250,7 +250,6 @@ function Impfunction(dataFull: topass) {
   ) {
     let query = event.currentTarget.value;
     setQuery(query);
-    console.log(query);
     let f: [FacultyDetails | undefined] = [undefined];
     for (let data in dataFull.details) {
       if (dataFull.details[data].display_name.toLowerCase().includes(query.toLowerCase()))
@@ -259,10 +258,6 @@ function Impfunction(dataFull: topass) {
     setFiltered(f);
   }
   function leftPress(id: number) {
-    setrId(id);
-  }
-  function leftPress1(id: number) {
-    setopenRes(false);
     setrId(id);
   }
   return (

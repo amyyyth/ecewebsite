@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500&display=swap');
+
+.MuiChip-root .MuiChip-avatar {
+  width: 56px !important;
+  height: 56px !important;
+}
+.techstack .MuiChip-root .MuiChip-avatar {
+  width: 24px !important;
+  height: 24px !important;
+}
 h1,
 p {
   font-family: Karla;
@@ -28,7 +37,7 @@ body {
 .pdbga {
   padding: 15px;
   background-size: cover;
-  background-image: url('data:image/svg+xml;utf8,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 50" enable-background="new" xml:space="preserve"><polygon points="0,0 0,20 100,40 100,0" style="fill:rgb(211,254,252)"/></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 50" enable-background="new" xml:space="preserve"><polygon points="0,0 0,20 100,40 100,0" style="fill:rgb(191,252,248)"/></svg>');
 }
 .acadbody {
   margin-left: 40px;

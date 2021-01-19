@@ -3,7 +3,10 @@ import Typography from "@material-ui/core/Typography";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 
-interface AppProps {}
+interface AppProps {
+  url_slug: string
+  child_url: string
+}
 interface AppState {
   apidata: {
       data: {heading: string}[]
@@ -20,7 +23,7 @@ export default class Primarynews extends Component<AppProps,AppState> {
     }};
 
   componentDidMount(){
-    fetch('https://eced.herokuapp.com/backend/newsblog/getnewshead/',
+    fetch('https://eced.herokuapp.com/backend/'+this.props.url_slug+'/getnewshead/',
       {method: 'GET'}
     ).then(
       response => response.json()
@@ -28,6 +31,10 @@ export default class Primarynews extends Component<AppProps,AppState> {
         this.setState({apidata:result});
       }).catch(error=>{console.log("Did not get News headings")})
   };
+
+  mapfunc = (obj: {heading: string},index: number)=>{
+    return(<li key={index}><a href={"/"+this.props.child_url}><Typography variant="h6">{obj.heading}</Typography></a></li>)
+  }
 
   render() {
     return (
@@ -37,9 +44,7 @@ export default class Primarynews extends Component<AppProps,AppState> {
             <ul>
             {
               this.state.apidata.data.map(
-                function (obj,index){
-                  return (<li><a href="/news"><Typography variant="h6">{obj.heading}</Typography></a></li>);
-                }
+                this.mapfunc
               )
             }
             </ul>

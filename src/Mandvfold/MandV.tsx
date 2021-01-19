@@ -8,7 +8,7 @@ export default function Primarymv() {
   return (
     <Card className="pdbga">
       <CardContent>
-        <Typography variant="h3" style={{fontFamily:"Karla,sans-serif"}}>VISION</Typography>
+        <Typography variant="h4" style={{fontFamily:"Karla,sans-serif"}}>VISION</Typography>
         <Typography variant="h6" style={{fontFamily:"Montserrat,sans-serif",marginTop:"20px"}}>
           The Department of Electronics and Communication Engineering is
           envisioned to be a leading centre of higher learning with academic
@@ -17,7 +17,7 @@ export default function Primarymv() {
           <br />
         </Typography>
         <Divider variant="middle" />
-        <Typography variant="h3" style={{fontFamily:"Karla,sans-serif"}}>MISSION</Typography>
+        <Typography variant="h4" style={{fontFamily:"Karla,sans-serif"}}>MISSION</Typography>
         <Typography variant="h6" style={{fontFamily:"Montserrat,sans-serif",marginTop:"20px"}}>
           The mission of the Department of Electronics and Communication
           Engineering is to impart high quality technical education by offering

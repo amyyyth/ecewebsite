@@ -4,11 +4,10 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 
 export default function PrimaryDepro() {
-  //const classes = useStyles();
   return (
     <Card className="pdbga">
       <CardContent>
-        <Typography variant="h3" style={{fontFamily:"Karla,sans-serif"}}>DEPARTMENT PROFILE</Typography>
+        <Typography variant="h4" style={{fontFamily:"Karla,sans-serif"}}>DEPARTMENT PROFILE</Typography>
         <Typography variant="h6" style={{fontFamily:"Montserrat,sans-serif",marginTop:"5vh"}}>
           The Department of Electronics and Communication Engineering, National
           Institute of Technology, Calicut, is involved in providing quality
