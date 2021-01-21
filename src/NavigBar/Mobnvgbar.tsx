@@ -106,9 +106,6 @@ export default function MobileNavBar() {
                     <ListItem button component="a" {...{href: "/staff"}}>
                       <ListItemText primary="Staff" />
                     </ListItem>
-                    <ListItem button component="a" {...{href: "/adhoc"}}>
-                      <ListItemText primary="Ad Hoc" />
-                    </ListItem>
                   </List>
                 </AccordionDetails>
               </Accordion>

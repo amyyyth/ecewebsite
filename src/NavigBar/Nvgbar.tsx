@@ -165,12 +165,6 @@ export default function PrimaryNavBar() {
                         Staff
                       </MenuItem>
                     </a>
-                    <Divider />
-                    <a href="/adhoc" style={{ color: "#03205c" }}>
-                      <MenuItem>
-                        Adhoc
-                      </MenuItem>
-                    </a>
                   </Menu>
                 </div>
 

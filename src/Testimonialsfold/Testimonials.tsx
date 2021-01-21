@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { useTheme } from "@material-ui/core/styles";
 import MobileStepper from "@material-ui/core/MobileStepper";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
@@ -60,81 +60,7 @@ const tutorialSteps = [
   },
 ];
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: "100%",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  header: {
-    display: "flex",
-    alignItems: "center",
-    height: 50,
-    paddingLeft: theme.spacing(4),
-    backgroundColor: theme.palette.background.default,
-  },
-  img: {
-    height: "140px",
-    borderRadius: "50%",
-  },
-  outcard: {
-    backgroundColor: "#fefefe",
-    height: "300px",
-    paddingTop: 0,
-    paddingLeft: 20,
-    paddingRight: 20,
-    paddingBottom: 50,
-    borderRadius: 10,
-    margin: "2%",
-    textAlign: "center",
-  },
-
-  incard: {
-    display: "flex",
-    padding: "15px",
-  },
-
-  imgblock: {
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  imgdiv: {
-    backgroundColor: "none",
-    width: "100%",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  namediv: {
-    backgroundColor: "none",
-    width: "100%",
-    display: "flex",
-    justifyContent: "center",
-    position: "relative",
-  },
-  contentdiv: {
-    padding: "15px",
-    backgroundColor: "none",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    textAlign: "left",
-    overflowY: "scroll",
-  },
-  jobitem: {
-    position: "relative",
-    bottom: "5px",
-    right: "5px",
-  },
-}));
-
 function SwipeableTextMobileStepper() {
-  const classes = useStyles();
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = tutorialSteps.length;

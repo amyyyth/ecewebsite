@@ -21,6 +21,8 @@ import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import logo from '../person.jpg';
 import "./faculty.css";
 
+import Rajpath from "../rajpath.jpg";
+
 interface FacultyDetails {
   id: number;
   profile_pic: string;
@@ -64,12 +66,13 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 function RightCard(faculty: FacultyDetails) {
   const classes = useStyles();
+  
   function showcards(cards: Section[] | undefined){
     if (cards) {
       return(
         cards.map(function(pobj,index){
           return (
-            <Container style={{ paddingLeft: "0px", paddingRight:"0px" }}>
+            <Container key={index} style={{ paddingLeft: "0px", paddingRight:"0px" }}>
             <div>
               <Accordion>
                 <AccordionSummary
@@ -98,13 +101,13 @@ function RightCard(faculty: FacultyDetails) {
     else{
       return (<p><br></br></p>)
     }
-    
   }
+
   return (
   <Card variant="outlined" style={{fontFamily: "Karla,sans-serif",}}>
     <CardContent>
       <div style={{display:"flex",flexDirection:"column",alignItems:"center", marginBottom:"20px",marginTop:"15px"}}>
-    <Typography variant="h4" style={{fontFamily: "Montserrat,sans-serif", fontWeight:"bolder"}}> {faculty.display_name} </Typography>
+      <Typography variant="h4" style={{fontFamily: "Montserrat,sans-serif", fontWeight:"bolder"}}> {faculty.display_name} </Typography>
       <Typography variant="h5" > {faculty.designation} </Typography>
       </div>
       <div
@@ -170,7 +173,6 @@ function RightCard(faculty: FacultyDetails) {
 
 function LeftTabCard(faculty: FacultyDetails) {
   return (
-  
     <Card
       variant="outlined"
       onClick={() => {
@@ -199,13 +201,13 @@ function LeftTabCard(faculty: FacultyDetails) {
             <div>
               <TableContainer>
               <Table size="small" aria-label="a dense table">
-                  <TableRow>
-                    <TableCell align="left">
-                      {" "}
-                      <Typography variant="h5" style={{fontFamily:"Montserrat",fontWeight:"bolder"}}> {faculty.display_name} </Typography>
-                    </TableCell>
-                  </TableRow>
                   <TableBody>
+                    <TableRow>
+                      <TableCell align="left">
+                        {" "}
+                        <Typography variant="h5" style={{fontFamily:"Montserrat",fontWeight:"bolder"}}> {faculty.display_name} </Typography>
+                      </TableCell>
+                    </TableRow>
                     <TableRow>
                       <TableCell align="left">
                         {" "}
@@ -215,13 +217,7 @@ function LeftTabCard(faculty: FacultyDetails) {
                     <TableRow>
                       <TableCell align="left">
                         {" "}
-                        <Typography variant="h6"> {faculty.email} </Typography>
-                      </TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell align="left">
-                        {" "}
-                        <Typography variant="h6"> {faculty.phone} </Typography>
+                        <Typography variant="h6"> {"Areas of Interest: "+faculty.aoi} </Typography>
                       </TableCell>
                     </TableRow>
                   </TableBody>
@@ -239,11 +235,12 @@ function Impfunction(dataFull: topass) {
   const [filtered, setFiltered] = useState<[FacultyDetails | undefined]>([
     undefined,
   ]);
-  const [rId, setrId] = useState(30); // id for HOD
+  const [rId, setrId] = useState(0);
   const [Query, setQuery] = useState("");
   const isOne = useMediaQuery({ query: "(max-width: 900px)" });
   const isTwo = useMediaQuery({ query: "(max-width: 730px)" });
-  const [openRes, setopenRes] = useState(false);
+  const [openRes, setopenRes] = useState(true);
+  const [rightImg,setrightImg] = useState(true);
   
   function handleChange(
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -259,6 +256,7 @@ function Impfunction(dataFull: topass) {
   }
   function leftPress(id: number) {
     setrId(id);
+    setrightImg(false);
   }
   return (
     <Container
@@ -302,15 +300,15 @@ function Impfunction(dataFull: topass) {
         />
         {((isTwo && openRes) || !isTwo) && (
           <Container
-            style={{ overflowY: "scroll", height: isTwo ? "55vh" : "85vh" }}
+            style={{ overflowY: "scroll", height: isTwo ? "75vh" : "85vh" }}
           >
             {Query !== "" && filtered.length === 1 ? (
               <Typography> No Faculy Matches your search </Typography>
             ) : Query === "" ? (
               dataFull.details.map((item1) => {
                 return (
-                  
                   <LeftTabCard
+                    key={item1.id}
                     id={item1.id}
                     profile_pic = {item1.profile_pic}
                     display_name={item1.display_name}
@@ -329,6 +327,7 @@ function Impfunction(dataFull: topass) {
                 if (item2 !== undefined)
                   return (
                     <LeftTabCard
+                    key={item2.id}
                     id={item2.id}
                     profile_pic = {item2.profile_pic}
                     display_name={item2.display_name}
@@ -356,23 +355,31 @@ function Impfunction(dataFull: topass) {
           marginTop: isTwo ? "80px" : "0px",
         }}
       >
-        {dataFull.details.map((item1) => {
-          if (item1.id === rId)
-            return (
-              <RightCard
-                id={item1.id}
-                profile_pic = {item1.profile_pic}
-                display_name={item1.display_name}
-                designation = {item1.designation}
-                room = {item1.room}
-                email = {item1.email}
-                phone={item1.phone}
-                aoi = {item1.aoi}
-                cards = {item1.cards}
-              />
-            );
-          else return null;
-        })}
+        {
+          (rightImg) ? (
+            <img height="100%" width="100%" src={Rajpath} alt="faculty dept img"></img>
+          ):(
+            dataFull.details.map((item1) => {
+              if (item1.id === rId){
+                return (
+                  <RightCard
+                    key={item1.id}
+                    id={item1.id}
+                    profile_pic = {item1.profile_pic}
+                    display_name={item1.display_name}
+                    designation = {item1.designation}
+                    room = {item1.room}
+                    email = {item1.email}
+                    phone={item1.phone}
+                    aoi = {item1.aoi}
+                    cards = {item1.cards}
+                  />
+                );
+              }
+              else return null; 
+            })
+          )
+        }
       </Container>
     </Container>
   );

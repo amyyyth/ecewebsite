@@ -89,11 +89,6 @@ body {
   margin-left: 64px;
   margin-right: 64px;
 }
-div.ql-editor table,
-div.ql-editor th,
-div.ql-editor td {
-    border: 1px solid black;
-}
 div.ql-editor table {
     width: 100%;
     border-collapse: collapse;

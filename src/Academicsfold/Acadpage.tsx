@@ -2,6 +2,7 @@ import { Component } from "react";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Container from '@material-ui/core/Container';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 interface AppProps {
     heading: string,
@@ -12,7 +13,8 @@ interface AppProps {
 interface AppState {
     apidata: {
         data: string
-    }
+    },
+    isLoaded: boolean;
 }
 
 export default class Academics extends Component<AppProps,AppState> {
@@ -21,7 +23,8 @@ export default class Academics extends Component<AppProps,AppState> {
     this.state = {
         apidata: {
             data: '<p>Loading... Please wait...</p>'
-        }
+        },
+        isLoaded: false
     };
   };
 
@@ -31,9 +34,26 @@ export default class Academics extends Component<AppProps,AppState> {
     ).then(
       response => response.json()
       ).then(result =>{
-        this.setState({apidata:result});
+        this.setState({apidata:result, isLoaded: true});
       }).catch(error=>{console.log("Did not get images")})
   };
+
+  circloader = () => {
+    return (
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "70vh", width: "100%" }} >
+        <CircularProgress />
+        <h4>Loading...</h4>
+      </div>
+    )
+  }
+
+  acadbody = () => {
+    return (
+      <div className={ "ql-container ql-snow" }>
+        <div className={ "ql-editor" } dangerouslySetInnerHTML={{ __html: this.state.apidata.data }}></div>
+      </div>
+    )
+  }
 
   render() {
     return (
@@ -44,9 +64,7 @@ export default class Academics extends Component<AppProps,AppState> {
         <Container className={this.props.classname} maxWidth="md">
           <Card className="pdbga">
               <CardContent>
-                  <div className={ "ql-container ql-snow" }>
-                    <div className={ "ql-editor" } dangerouslySetInnerHTML={{ __html: this.state.apidata.data }}></div>
-                  </div>
+                {(this.state.isLoaded) ? (this.acadbody()):(this.circloader())}
               </CardContent>
           </Card>
         </Container>
