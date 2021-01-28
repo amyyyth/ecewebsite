@@ -64,6 +64,7 @@ function SwipeableTextMobileStepper() {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = tutorialSteps.length;
+  const [userNotHover, setUserNotHover] = React.useState(true);
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -74,7 +75,9 @@ function SwipeableTextMobileStepper() {
   };
 
   const handleStepChange = (step: number) => {
-    setActiveStep(step);
+    if (userNotHover){
+      setActiveStep(step);
+    }
   };
 
   return (
@@ -88,7 +91,7 @@ function SwipeableTextMobileStepper() {
       >
         <h1>TESTIMONIALS</h1>
       </div>
-
+      <div onMouseEnter={()=>{setUserNotHover(false)}} onMouseLeave={()=>{setUserNotHover(true)}}>
       <AutoPlaySwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={activeStep}
@@ -153,6 +156,7 @@ function SwipeableTextMobileStepper() {
           </Box>
         ))}
       </AutoPlaySwipeableViews>
+      </div>
       <MobileStepper
         steps={maxSteps}
         position="static"
