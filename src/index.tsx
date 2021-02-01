@@ -13,9 +13,9 @@ import PrimaryNavBar from "./NavigBar/Nvgbar";
 import Primaryfooter from "./Footerfold/Footer";
 import Creditspage from "./Creditsfold/Creditscomp";
 import Home from "./Indexfold/Indexpage";
-import Mobhome from "./Indexfold/Mobindexpage";
 
 // First load Mobile
+import Mobhome from "./Indexfold/Mobindexpage";
 import MobileNavBar from "./NavigBar/Mobnvgbar";
 
 // Lazy loading
@@ -30,6 +30,7 @@ const MobLabslist = lazy(()=>import("./Labsfold/Labslistpagemob"));
 const MobLabpage = lazy(()=>import("./Labsfold/Labspecificmob"));
 const MobStaticpage = lazy(()=>import("./Staticpagefold/Staticappmob"));
 const Activityapp = lazy(()=>import("./Activitiesfold/Activitiescomp"));
+const Staffapp = lazy(()=>import("./Stafffold/Staffpage"));
 
 interface AppProps {}
 interface AppState {}
@@ -62,7 +63,7 @@ const circloader = () => {
   return (
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "70vh", width: "100%" }} >
       <CircularProgress />
-      <h4>Taking more time than usual. Please check your internet connection.</h4>
+      <h4>Taking more time than usual. Please check your internet connection and refresh the page.</h4>
     </div>
   )
 }
@@ -102,7 +103,7 @@ class App extends Component<AppProps, AppState> {
                 <MobLabslist />
               </Route>
               <Route path="/staff">
-                <MobStaticpage urlslug="staff" />
+                <Staffapp />
               </Route>
               <Route path="/conferenceroom">
                 <MobStaticpage urlslug="conferenceroom" />
@@ -172,7 +173,7 @@ class App extends Component<AppProps, AppState> {
                   <Labslist />
                 </Route>
                 <Route path="/staff">
-                  <Staticpage urlslug="staff" />
+                  <Staffapp />
                 </Route>
                 <Route path="/conferenceroom">
                   <Staticpage urlslug="conferenceroom" />
