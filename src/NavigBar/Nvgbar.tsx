@@ -60,12 +60,12 @@ export default function PrimaryNavBar() {
     <div>
       <AppBar position="static">
         <Toolbar>
-          <div>
+          <div><a href="/">
             <img
               className={classes.logo}
               src="https://upload.wikimedia.org/wikipedia/en/d/d0/National_Institute_of_Technology%2C_Calicut_Logo.png"
               alt="NITC logo"
-            />
+            /></a>
           </div>
           <div className={classes.groupa}>
             <a href="/">
@@ -163,12 +163,6 @@ export default function PrimaryNavBar() {
                     <a href="/staff" style={{ color: "#03205c" }}>
                       <MenuItem>
                         Staff
-                      </MenuItem>
-                    </a>
-                    <Divider />
-                    <a href="/adhoc" style={{ color: "#03205c" }}>
-                      <MenuItem>
-                        Adhoc
                       </MenuItem>
                     </a>
                   </Menu>
