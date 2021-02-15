@@ -202,7 +202,6 @@ function Impfunction(dataFull: topass) {
 
       <Container
         style={{
-          overflowY: "auto",
           backgroundColor: "#fff",
           padding: isOne ? "20px" : "40px",
           marginTop: isTwo ? "80px" : "0px",

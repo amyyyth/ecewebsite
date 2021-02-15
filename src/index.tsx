@@ -13,27 +13,29 @@ import PrimaryNavBar from "./NavigBar/Nvgbar";
 import Primaryfooter from "./Footerfold/Footer";
 import Creditspage from "./Creditsfold/Creditscomp";
 import Home from "./Indexfold/Indexpage";
+import Academics from "./Academicsfold/Acadpage";
+import Staticpage from "./Staticpagefold/Staticapp";
+import Newspagecomp from "./Newsfold/Newspage";
 
 // First load Mobile
 import Mobhome from "./Indexfold/Mobindexpage";
 import MobileNavBar from "./NavigBar/Mobnvgbar";
+import MobStaticpage from "./Staticpagefold/Staticappmob";
 
 // Lazy loading
 const Alumni = lazy(()=>import("./Alumnifold/Alumnipage"));
-const Newspagecomp = lazy(()=>import("./Newsfold/Newspage"));
-const Academics = lazy(()=>import("./Academicsfold/Acadpage"));
 const Facultyapp = lazy(()=>import("./Facultiesfold/Facultypage"));
 const Labslist = lazy(()=>import("./Labsfold/Labslistpage"));
 const Labpage = lazy(()=>import("./Labsfold/Labspecific"));
-const Staticpage = lazy(()=>import("./Staticpagefold/Staticapp"));
 const MobLabslist = lazy(()=>import("./Labsfold/Labslistpagemob"));
 const MobLabpage = lazy(()=>import("./Labsfold/Labspecificmob"));
-const MobStaticpage = lazy(()=>import("./Staticpagefold/Staticappmob"));
 const Activityapp = lazy(()=>import("./Activitiesfold/Activitiescomp"));
 const Staffapp = lazy(()=>import("./Stafffold/Staffpage"));
 
 interface AppProps {}
-interface AppState {}
+interface AppState {
+  isLoaded: boolean
+}
 
 // ------------ THEME COLOR ---------------------
 // #062a51
@@ -59,7 +61,7 @@ const theme = createMuiTheme({
   }
 });
 
-const circloader = () => {
+const circloaderfall = () => {
   return (
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "70vh", width: "100%" }} >
       <CircularProgress />
@@ -69,13 +71,32 @@ const circloader = () => {
 }
 
 class App extends Component<AppProps, AppState> {
+  constructor(props: any){
+    super(props);
+    this.state = {
+      isLoaded: false
+    }
+  }
+
+  componentDidMount(){
+    this.setState({isLoaded:true})
+  }
+  
+  circloader = () => {
+    return (
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", width: "100%" }} >
+        <CircularProgress />
+        <h4>Loading...</h4>
+      </div>
+    )
+  }
 
   renderChoose = () => {
     if (isMobile) {
       return (
         <Router>
           <MobileNavBar />
-          <Suspense fallback={circloader}>
+          <Suspense fallback={circloaderfall}>
             <Switch>
               <Route path="/news">
                 <Newspagecomp url_slug="newsblog" />
@@ -145,7 +166,7 @@ class App extends Component<AppProps, AppState> {
         <Router>
           <div id="bg">
             <PrimaryNavBar />
-            <Suspense fallback={circloader}>
+            <Suspense fallback={circloaderfall}>
               <Switch>
                 <Route path="/news">
                   <Newspagecomp url_slug="newsblog" />
@@ -215,7 +236,9 @@ class App extends Component<AppProps, AppState> {
   };
 
   render() {
-    return <ThemeProvider theme={theme}>{this.renderChoose()}</ThemeProvider>;
+    return <ThemeProvider theme={theme}>{
+      (this.state.isLoaded)?(this.renderChoose()):(this.circloader())
+      }</ThemeProvider>;
   }
 }
 

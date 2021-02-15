@@ -6,7 +6,6 @@ import PrimaryCarousel from "../Carouselfold/CarouselComp";
 import Primarynews from "../Newsfold/Newsindex";
 import Primaryqlinks from "../Qlinksfold/Qlinks";
 
-
 interface AppProps {
     isMobile: boolean
 }
