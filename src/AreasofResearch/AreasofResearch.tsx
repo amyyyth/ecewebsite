@@ -8,7 +8,7 @@ import Rajpath from "../rajpath.jpg";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
-import Box from "@material-ui/core/Box";
+//import Box from "@material-ui/core/Box";
 
 interface AppProps {}
 interface AppState {

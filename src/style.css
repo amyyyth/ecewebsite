@@ -234,3 +234,13 @@ div.labs a:hover {
   position: relative;
   font-size: 90%; 
 }
+
+.marquee{
+  display: inline-block;
+  animation: marquee 5s linear infinite;
+}
+
+@keyframes marquee{
+  0% {transform: translate(0,100%);}
+  100% {transform: translate(0,-200%);}
+}

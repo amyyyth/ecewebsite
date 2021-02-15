@@ -40,14 +40,16 @@ export default class Primarynews extends Component<AppProps,AppState> {
     return (
       <Card id="qlinksa" style={{padding:"15px"}}>
         <CardContent style={{fontFamily:"Karla,sans-serif"}}>
-        <Typography variant="h4" style={{fontFamily:"Montserrat,sans-serif",fontWeight:"bolder",marginBottom:"15px"}}>NEWS</Typography>
+          <Typography variant="h4" style={{fontFamily:"Montserrat,sans-serif",fontWeight:"bolder",marginBottom:"15px"}}>NEWS</Typography>
+          <div className="marquee">
             <ul>
-            {
-              this.state.apidata.data.map(
-                this.mapfunc
-              )
-            }
-            </ul>
+              {
+                this.state.apidata.data.map(
+                  this.mapfunc
+                )
+              }
+              </ul>
+          </div>
           </CardContent>
       </Card>
     );
