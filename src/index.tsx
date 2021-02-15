@@ -20,7 +20,12 @@ import Newspagecomp from "./Newsfold/Newspage";
 // First load Mobile
 import Mobhome from "./Indexfold/Mobindexpage";
 import MobileNavBar from "./NavigBar/Mobnvgbar";
+<<<<<<< HEAD
 import MobStaticpage from "./Staticpagefold/Staticappmob";
+=======
+import AreasofResearch from "./AreasofResearch/AreasofResearch";
+import AreasofResearchMob from "./AreasofResearch/AreasofResearchMob";
+>>>>>>> 3896966046ba375ab02321c6f950433ab3f2ba71
 
 // Lazy loading
 const Alumni = lazy(()=>import("./Alumnifold/Alumnipage"));
@@ -130,7 +135,7 @@ class App extends Component<AppProps, AppState> {
                 <MobStaticpage urlslug="conferenceroom" />
               </Route>
               <Route path="/areasofresearch">
-                <MobStaticpage urlslug="areasofresearch" />
+                <AreasofResearchMob/>
               </Route>
               <Route path="/seminarhall">
                 <MobStaticpage urlslug="seminarhall" />
@@ -200,7 +205,7 @@ class App extends Component<AppProps, AppState> {
                   <Staticpage urlslug="conferenceroom" />
                 </Route>
                 <Route path="/areasofresearch">
-                  <Staticpage urlslug="areasofresearch" />
+                  <AreasofResearch />
                 </Route>
                 <Route path="/seminarhall">
                   <Staticpage urlslug="seminarhall" />

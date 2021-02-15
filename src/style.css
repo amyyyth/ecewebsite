@@ -109,7 +109,6 @@ div.fac td {
   max-width: 5000px;
   padding: 0;
   width: 99vw;
-  min-height: 160vh;
   scroll-behavior: auto;
   padding-top: 50px;
 }
