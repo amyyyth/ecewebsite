@@ -13,6 +13,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableRow from "@material-ui/core/TableRow";
 import { useMediaQuery } from "react-responsive";
 import CircularProgress from '@material-ui/core/CircularProgress';
+import LaunchIcon from '@material-ui/icons/Launch';
 import logo from '../person.jpg';
 import "./phd.css";
 
@@ -75,7 +76,10 @@ function LeftTabCard(staff: StaffDetails) {
                     <TableRow>
                       <TableCell align="left">
                         {" "}
-                        <Typography variant="h5" style={{fontFamily:"Montserrat",fontWeight:"bolder"}}> {staff.display_name} </Typography>
+                        <Typography variant="h5" style={{fontFamily:"Montserrat",fontWeight:"bolder"}}>
+                          {staff.display_name} &nbsp;
+                          <a href={staff.ext_link} target="_blank" rel="noreferrer"><LaunchIcon color="primary" /></a>
+                        </Typography>
                       </TableCell>
                     </TableRow>
                     <TableRow>
