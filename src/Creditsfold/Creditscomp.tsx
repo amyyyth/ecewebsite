@@ -85,6 +85,24 @@ export default function Creditspage() {
                             <li>
                                 <Chip
                                 size="medium"
+                                avatar={<Avatar alt="Dhanraj" >D</Avatar>}
+                                label="Dr. Dhanraj K. J."
+                                className={classes.chip}
+                                color="primary"
+                                />
+                            </li>
+                            <li>
+                                <Chip
+                                size="medium"
+                                avatar={<Avatar alt="Raghu" >R</Avatar>}
+                                label="Dr. Raghu C. V."
+                                className={classes.chip}
+                                color="primary"
+                                />
+                            </li>
+                            <li>
+                                <Chip
+                                size="medium"
                                 avatar={<Avatar alt="Deepth"  >D</Avatar>}
                                 label="Dr. Deepthi P.P. (HOD)"
                                 className={classes.chip}

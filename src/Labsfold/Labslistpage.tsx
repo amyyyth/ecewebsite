@@ -5,7 +5,7 @@ import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import { useRouteMatch } from "react-router-dom";
-import Rajpath from "../rajpath.jpg";
+import Rajpath from "../lab.png";
 
 export default function Labslist(){
   let match = useRouteMatch();

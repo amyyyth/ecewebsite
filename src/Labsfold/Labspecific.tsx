@@ -5,7 +5,7 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import { useParams } from "react-router-dom";
 import Grid from '@material-ui/core/Grid';
-import Rajpath from "../rajpath.jpg";
+import Rajpath from "../lab.png";
 
 function Labpage(){
     let { labid } = useParams<{labid : string}>();

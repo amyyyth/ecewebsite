@@ -11,7 +11,6 @@ import "./editedquilltable.css";
 import CircularProgress from '@material-ui/core/CircularProgress';
 import PrimaryNavBar from "./NavigBar/Nvgbar";
 import Primaryfooter from "./Footerfold/Footer";
-import Creditspage from "./Creditsfold/Creditscomp";
 import Home from "./Indexfold/Indexpage";
 import Academics from "./Academicsfold/Acadpage";
 import Staticpage from "./Staticpagefold/Staticapp";
@@ -34,6 +33,8 @@ const MobLabslist = lazy(()=>import("./Labsfold/Labslistpagemob"));
 const MobLabpage = lazy(()=>import("./Labsfold/Labspecificmob"));
 const Activityapp = lazy(()=>import("./Activitiesfold/Activitiescomp"));
 const Staffapp = lazy(()=>import("./Stafffold/Staffpage"));
+const Phdapp = lazy(()=>import("./Phdfold/Phdpage"));
+const Creditspage = lazy(()=>import("./Creditsfold/Creditscomp"));
 
 interface AppProps {}
 interface AppState {
@@ -145,7 +146,7 @@ class App extends Component<AppProps, AppState> {
                 <MobStaticpage urlslug="departmentbuildings" />
               </Route>
               <Route path="/phdongoing">
-                <MobStaticpage urlslug="phdongoing" />
+                <Phdapp />
               </Route>
               <Route path="/phdawarded">
                 <MobStaticpage urlslug="phdawarded" />
@@ -215,7 +216,7 @@ class App extends Component<AppProps, AppState> {
                   <Staticpage urlslug="departmentbuildings" />
                 </Route>
                 <Route path="/phdongoing">
-                  <Staticpage urlslug="phdongoing" />
+                  <Phdapp />
                 </Route>
                 <Route path="/phdawarded">
                   <Staticpage urlslug="phdawarded" />
