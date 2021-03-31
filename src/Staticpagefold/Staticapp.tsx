@@ -56,8 +56,8 @@ export default class Staticpage extends Component<AppProps,AppState> {
 
   afterload = ()=> {
     return (
-    <Container className="maincontainer">
-      <Card className="imageplaceholder">
+    <div className="maincontainer" >
+      <Card className="imageplaceholder" >
         <img height="100%" src={Rajpath} alt="someImg" ></img>
       </Card>
       <Card className="contentplaceholder">
@@ -80,7 +80,7 @@ export default class Staticpage extends Component<AppProps,AppState> {
         </CardContent>
         <CardActions />
       </Card>
-    </Container>
+    </div>
     )
   }
 

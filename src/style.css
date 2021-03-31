@@ -101,7 +101,7 @@ div.fac td {
 #bg {
   width: 100%;
   height: 100%;
-  background-color: #fffff0;
+  background-color: #ffffff;
 }
 .maincontainer {
   background-color: #ffffff;
@@ -139,6 +139,7 @@ div.fac td {
   z-index: 2;
   display: inline-block;
   vertical-align: middle;
+  margin-bottom: -90vh;
 }
 .contentplaceholdermobile {
   background-color: #ffffff;
@@ -238,10 +239,15 @@ div.labs a:hover {
 
 .marquee{
   display: inline-block;
-  animation: marquee 5s linear infinite;
+  animation: marquee 9s linear infinite;
+
 }
 
 @keyframes marquee{
   0% {transform: translate(0,100%);}
-  100% {transform: translate(0,-200%);}
+  100% {transform: translate(0,-100%);}
+}
+.marquee :hover{
+  animation-play-state: paused;
+  
 }
