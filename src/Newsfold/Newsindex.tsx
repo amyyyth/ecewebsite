@@ -38,17 +38,21 @@ export default class Primarynews extends Component<AppProps,AppState> {
 
   render() {
     return (
-      <Card id="qlinksa" style={{padding:"15px"}}>
+      <Card id="qlinksa" style={{padding:"0px"}}>
         <CardContent style={{fontFamily:"Karla,sans-serif"}}>
-          <Typography variant="h4" style={{fontFamily:"Montserrat,sans-serif",fontWeight:"bolder",marginBottom:"15px"}}>NEWS</Typography>
-          <div className="marquee">
-            <ul>
-              {
-                this.state.apidata.data.map(
-                  this.mapfunc
-                )
-              }
-              </ul>
+          <div>
+            <Typography variant="h4" style={{fontFamily:"Montserrat,sans-serif",fontWeight:"bolder",marginBottom:"15px", paddingBottom: "0"}}>NEWS</Typography>
+          </div>
+          <div style={{overflow:"hidden"}}>
+            <div className="marquee">
+              <ul style={{marginBottom: "30px"}}>
+                {
+                  this.state.apidata.data.map(
+                    this.mapfunc
+                  )
+                }
+                </ul>
+            </div>
           </div>
           </CardContent>
       </Card>
