@@ -10,8 +10,7 @@ export default function Primarymv() {
       <CardContent>
         <Typography variant="h4" style={{fontFamily:"Karla,sans-serif"}}>VISION</Typography>
         <Typography variant="h6" style={{fontFamily:"Montserrat,sans-serif",marginTop:"20px"}}>
-          The Department of Electronics and Communication Engineering is
-          envisioned to be a leading centre of higher learning with academic
+          A leading centre of higher learning with academic
           excellence in the field of electronics and communication engineering.
           <br />
           <br />
@@ -19,8 +18,7 @@ export default function Primarymv() {
         <Divider variant="middle" />
         <Typography variant="h4" style={{fontFamily:"Karla,sans-serif"}}>MISSION</Typography>
         <Typography variant="h6" style={{fontFamily:"Montserrat,sans-serif",marginTop:"20px"}}>
-          The mission of the Department of Electronics and Communication
-          Engineering is to impart high quality technical education by offering
+          To impart high quality technical education by offering
           undergraduate, graduate and research programs in the domain of
           electronics and communication engineering with thorough foundation in
           theory, along with strong hands-on design and laboratory components,
