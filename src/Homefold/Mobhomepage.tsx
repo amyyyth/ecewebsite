@@ -6,7 +6,7 @@ import Primarynews from "../Newsfold/Newsindex";
 import Primarymv from "../Mandvfold/MandV";
 import SwipeableTextMobileStepper from '../Testimonialsfold/Testimonials';
 
-export default function Mobindex(){
+export default function Mobhome(){
     return (
         <div id="bg" style={{ width: "100%" }}>
             <div id="carsamob">

@@ -3,6 +3,9 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Container from '@material-ui/core/Container';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
+import Button from '@material-ui/core/Button';
 
 interface AppProps {
   url_slug: string
@@ -10,12 +13,15 @@ interface AppProps {
 interface AppState {
   apidata: {
       data: {
+          id: number,
           heading: string,
           newsops: string,
-          date_uploaded: string
-        }[]
+          date_uploaded: string,
+        }[],
+      lastPage: boolean | undefined
     },
-    isLoaded: boolean
+    isLoaded: boolean,
+    currentPage: number
 }
 
 export default class Newspagecomp extends Component<AppProps,AppState> {
@@ -24,17 +30,20 @@ export default class Newspagecomp extends Component<AppProps,AppState> {
     this.state = {
         apidata: {
             data: [{
+                id: 0,
                 heading: 'Loading...',
                 newsops: '<p>Loading... Please wait...</p>',
-                date_uploaded: 'loading...'
-            }]
+                date_uploaded: 'loading...',
+            }],
+            lastPage: true
         },
-        isLoaded: false
+        isLoaded: false,
+        currentPage: 1
     };
   };
 
   componentDidMount(){
-    fetch('https://eced.herokuapp.com/backend/'+this.props.url_slug+'/getnews/1/',
+    fetch('https://eced.herokuapp.com/backend/'+this.props.url_slug+'/getnews/'+String(this.state.currentPage)+'/',
       {method: 'GET'}
     ).then(
       response => response.json()
@@ -52,6 +61,58 @@ export default class Newspagecomp extends Component<AppProps,AppState> {
     )
   }
 
+  leftClick = () => {
+    fetch('https://eced.herokuapp.com/backend/'+this.props.url_slug+'/getnews/'+String(this.state.currentPage-1)+'/',
+      {method: 'GET'}
+    ).then(
+      response => response.json()
+      ).then(result =>{
+        this.setState({apidata:result,isLoaded:true});
+      }).catch(error=>{console.log("Did not get News")})
+  }
+
+  rightClick = () => {
+    fetch('https://eced.herokuapp.com/backend/'+this.props.url_slug+'/getnews/'+String(this.state.currentPage+1)+'/',
+      {method: 'GET'}
+    ).then(
+      response => response.json()
+      ).then(result =>{
+        this.setState({apidata:result,isLoaded:true});
+      }).catch(error=>{console.log("Did not get News")})
+  }
+
+  navButtons = () => {
+    let lbs = true;
+    (this.state.currentPage===1)?(lbs=true):(lbs=false);
+    
+    return (
+      <div style={{ justifyContent: "center", paddingTop: "20px", paddingBottom: "20px", display: "flex"}}>
+        <div>
+          <Button
+            variant="contained"
+            color="primary"
+            disabled={lbs}
+            style={{marginRight: "10px"}}
+            startIcon={<NavigateBeforeIcon />}
+            onClick={this.leftClick}
+          >
+            Prev
+          </Button> 
+          <Button
+            variant="contained"
+            color="primary"
+            disabled={this.state.apidata.lastPage}
+            style={{marginLeft: "10px"}}
+            endIcon={<NavigateNextIcon />}
+            onClick={this.rightClick}
+          >
+            Next
+          </Button>
+        </div>
+      </div>
+    )
+  }
+
   newsbody = () => {
     return (
       <Container style={{ marginLeft: "40px", marginRight: "40px", marginBottom: "40px" }}>
@@ -59,7 +120,7 @@ export default class Newspagecomp extends Component<AppProps,AppState> {
           this.state.apidata.data.map(
             function(obj,index){
               return (
-                <div style={{ paddingTop: "20px" }}>
+                <div style={{ paddingTop: "20px" }} key={ obj.id }>
                   <Card className="pdbga">
                     <CardContent>
                       <Container style={{ display: "flex", justifyContent: "space-between" }}>
@@ -75,6 +136,9 @@ export default class Newspagecomp extends Component<AppProps,AppState> {
               )
             }
           )
+        }
+        {
+          this.navButtons()
         }
       </Container>
     )

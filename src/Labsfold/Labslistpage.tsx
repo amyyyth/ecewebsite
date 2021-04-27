@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import { Component } from "react";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Card from "@material-ui/core/Card";
@@ -9,11 +10,14 @@ import Rajpath from "../lab.png";
 
 export default function Labslist(){
   let match = useRouteMatch();
-  return <Labslistclass match={match} />;
+  const matches = useMediaQuery('(min-width:840px)');
+  
+  return <Labslistclass match={match} isDesk={matches} />;
 }
 
 interface AppProps {
-  match: any
+  match: any,
+  isDesk: boolean
 }
 interface AppState {
   apidata: {
@@ -50,6 +54,9 @@ class Labslistclass extends Component<AppProps,AppState> {
   render() {
     let match = this.props.match;
     return (
+      <div>
+        {
+          (this.props.isDesk)?(
       <Container className="maincontainer">
         <Card className="imageplaceholder">
           <img height="100%" src={Rajpath} alt="someImg" ></img>
@@ -79,6 +86,37 @@ class Labslistclass extends Component<AppProps,AppState> {
           <CardActions />
         </Card>
       </Container>
+          ):(
+            <Container className="maincontainermobile">
+            <Card className="contentplaceholdermobile">
+              <CardContent>
+                <Container>
+                  <div className="triangle1" />
+                  <div className="cardcontents">
+                    <Typography component="div" style={{ minHeight: "105vh" }}>
+                      <h1 style={{ position: "relative", left: "2%", top: "5%" }}>
+                        LABORATORIES
+                      </h1>
+                      <div className="labs">
+                        {
+                          this.state.apidata.data.map(function(obj,index){
+                            return (
+                              <li><a href={`${match.url}/`.concat(obj.id)}>{obj.heading}</a></li>
+                            )
+                          })
+                        }
+                      </div>
+                    </Typography>
+                  </div>
+                </Container>
+              </CardContent>
+              <CardActions />
+            </Card>
+          </Container>
+          )
+        }
+      </div>
+      
     );
   }
 }

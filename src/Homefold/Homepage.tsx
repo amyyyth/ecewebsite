@@ -7,9 +7,9 @@ import Primarynews from "../Newsfold/Newsindex";
 import Primarymv from "../Mandvfold/MandV";
 import SwipeableTextMobileStepper from '../Testimonialsfold/Testimonials';
 
-export default function PrimaryIndex() {
+export default function Deskhome() {
     return (
-        <div>
+        <div id="bg">
         <div id="carsa">
           <PrimaryCarousel url_slug="carousel" />
         </div>

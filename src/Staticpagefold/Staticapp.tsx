@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Card from "@material-ui/core/Card";
@@ -8,7 +8,8 @@ import Rajpath from "../lab.png";
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 interface AppProps {
-  urlslug: string
+  urlslug: string,
+  isDesk: boolean
 }
 interface AppState {
   apidata: {
@@ -20,7 +21,7 @@ interface AppState {
   isLoaded: boolean
 }
 
-export default class Staticpage extends Component<AppProps,AppState> {
+export default class Staticclass extends Component<AppProps,AppState> {
   constructor(props: any){
     super(props);
     this.state = {
@@ -54,33 +55,52 @@ export default class Staticpage extends Component<AppProps,AppState> {
     )
   }
 
-  afterload = ()=> {
-    return (
-    <div className="maincontainer" >
-      <Card className="imageplaceholder" >
-        <img height="100%" src={Rajpath} alt="someImg" ></img>
-      </Card>
-      <Card className="contentplaceholder">
-        <CardContent>
-          <Container>
-            <div className="triangle1" />
-            <div className="cardcontents">
-              <Typography component="div" style={{ minHeight: "105vh" }}>
-                <h1 style={{ position: "relative", left: "2%", top: "5%" }}>
-                  {this.state.apidata.data.heading}
-                </h1>
-                <div className="labs">
-                  <div className={ "ql-container ql-snow" }>
-                      <div className={ "ql-editor" } dangerouslySetInnerHTML={{ __html: this.state.apidata.data.descops }}></div>
-                  </div>
-                </div>
-              </Typography>
+  insidecontainer = () => (
+    <Container>
+      <div className="triangle1" />
+      <div className="cardcontents">
+        <Typography component="div" style={{ minHeight: "105vh" }}>
+          <h1 style={{ position: "relative", left: "2%", top: "5%" }}>
+            {this.state.apidata.data.heading}
+          </h1>
+          <div className="labs">
+            <div className={ "ql-container ql-snow" }>
+                <div className={ "ql-editor" } dangerouslySetInnerHTML={{ __html: this.state.apidata.data.descops }}></div>
             </div>
+          </div>
+        </Typography>
+      </div>
+    </Container>
+  )
+
+  afterload = () => {
+    return (
+      <div>
+      {
+        (this.props.isDesk)?(
+          <div className="maincontainer" >
+            <Card className="imageplaceholder" >
+              <img height="100%" src={Rajpath} alt="someImg" ></img>
+            </Card>
+            <Card className="contentplaceholder">
+              <CardContent>
+                {this.insidecontainer()}
+              </CardContent>
+            <CardActions />
+            </Card>
+          </div>
+        ):(
+          <Container className="maincontainermobile">
+            <Card className="contentplaceholdermobile">
+              <CardContent>
+                {this.insidecontainer()}
+              </CardContent>
+              <CardActions />
+            </Card>
           </Container>
-        </CardContent>
-        <CardActions />
-      </Card>
-    </div>
+        )
+      }
+      </div>
     )
   }
 

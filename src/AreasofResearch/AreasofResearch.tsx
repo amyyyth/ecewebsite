@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Card from "@material-ui/core/Card";

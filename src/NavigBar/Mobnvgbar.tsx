@@ -17,7 +17,7 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     logo: {
-      height: "50px",
+      height: "60px",
       filter: "invert(100%)"
     },
     groupa: {
@@ -54,9 +54,9 @@ export default function MobileNavBar() {
           </div>
           <div className={classes.groupa}>
             <a href="/">
-            <h2 className={classes.headinga}>
+            <h4 className={classes.headinga}>
               DEPARTMENT OF ELECTRONICS AND COMMUNICATION ENGINEERING
-            </h2>
+            </h4>
             </a>
           </div>
           <div>
@@ -68,6 +68,16 @@ export default function MobileNavBar() {
               <MenuIcon />
             </IconButton>
             <Drawer anchor="right" open={dstate} onClose={toggleDrawer(true)} style={{fontFamily:"Karla"}}>
+              <a href="/">
+                <Accordion>
+                  <AccordionSummary
+                    aria-controls="panel6a-content"
+                    id="panel6a-header"
+                  >
+                    <h4 style={{ margin: "0px" }}>HOME</h4>
+                  </AccordionSummary>
+                </Accordion>
+              </a>
               <Accordion>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
@@ -179,7 +189,7 @@ export default function MobileNavBar() {
                   </AccordionSummary>
                 </Accordion>
               </a>
-              <a href="https://eced.herokuapp.com/backend/people/login/">
+              <a href="/backend/people/login/">
                 <Accordion>
                   <AccordionSummary
                     aria-controls="panel7a-content"

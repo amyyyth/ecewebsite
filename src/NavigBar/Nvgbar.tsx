@@ -80,6 +80,19 @@ export default function PrimaryNavBar() {
             </div>
             <div style={{ width: "100%" }}>
               <Box display="flex" justifyContent="flex-end">
+
+              <div>
+                  <Button
+                    aria-controls="simple-menu"
+                    aria-haspopup="true"
+                    color="secondary"
+                    className={classes.navButton}
+                    href="/"
+                  >
+                    HOME
+                  </Button>
+                </div>
+
                 <div>
                   <Button
                     aria-controls="simple-menu"
