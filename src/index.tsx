@@ -3,29 +3,29 @@ import { render } from "react-dom";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import CircularProgress from '@material-ui/core/CircularProgress';
-import "./style.css";
-import "./editedquill.snow.min.css";
-import "./editedquilltable.css";
+import "./styles/style.css";
+import "./styles/editedquill.snow.min.css";
+import "./styles/editedquilltable.css";
 
-import Choosenav from "./NavigBar/Nvgmanager";
-import Primaryfooter from "./Footerfold/Footer";
-import ChooseAcad from "./Academicsfold/Acadmanager";
-import Choosehome from "./Homefold/Homemanager";
-import ChooseAoR from "./AreasofResearch/Aormanager";
-import Newspagecomp from "./Newsfold/Newspage";
+import Choosenav from "./components/NavigBar/Nvgmanager";
+import Primaryfooter from "./components/Footer";
+import ChooseAcad from "./components/Academicsfold/Acadmanager";
+import Choosehome from "./components/Homefold/Homemanager";
+import ChooseAoR from "./components/AreasofResearch/Aormanager";
+import Newspagecomp from "./components/Newsfold/Newspage";
 
 // Lazy loading
-const Facultyapp = lazy(()=>import("./Facultiesfold/Facultypage"));
-const Staffapp = lazy(()=>import("./Stafffold/Staffpage"));
-const Activityapp = lazy(()=>import("./Activitiesfold/Activitiescomp"));
-const Phdapp = lazy(()=>import("./Phdfold/Phdpage"));
-const Creditspage = lazy(()=>import("./Creditsfold/Creditscomp"));
-const Staticpage = lazy(()=>import("./Staticpagefold/Staticmanager"));
-const Labslist = lazy(()=>import("./Labsfold/Labslistpage"));
-const Labpage = lazy(()=>import("./Labsfold/Labspecific"));
+const Facultyapp = lazy(()=>import("./components/Facultiesfold/Facultypage"));
+const Staffapp = lazy(()=>import("./components/Stafffold/Staffpage"));
+const Activityapp = lazy(()=>import("./components/Activitiescomp"));
+const Phdapp = lazy(()=>import("./components/Phdfold/Phdpage"));
+const Creditspage = lazy(()=>import("./components/Creditsfold/Creditscomp"));
+const Staticpage = lazy(()=>import("./components/Staticpagefold/Staticmanager"));
+const Labslist = lazy(()=>import("./components/Labsfold/Labslistpage"));
+const Labpage = lazy(()=>import("./components/Labsfold/Labspecific"));
 
 // Alumni page fix needed
-const Alumni = lazy(()=>import("./Alumnifold/Alumnipage"));
+const Alumni = lazy(()=>import("./components/Alumnipage"));
 
 interface AppProps {}
 interface AppState {
