@@ -108,7 +108,7 @@ function Impfunction(dataFull: topass) {
   }
   function leftPress(id: number) {
     setrId(id);
-    fetch(apiurl+'/backend/activity/activitydesc/'+id.toString()).then(
+    fetch(apiurl+'/backend/activity/activitydesc/'+id.toString()+'/').then(
       response => response.json()
       ).then(
         result =>{setdescopsstr(result.descops)}
