@@ -145,7 +145,7 @@ function SwipeableTextMobileStepper() {
                 </div>
               </div>
               <Box style={{ padding: "15px" }}>
-                <Typography variant="h6" style={{fontFamily:"Montserrat,sans-serif",marginTop:"5vh"}}>
+                <Typography variant="h6" style={{fontFamily:"Montserrat,sans-serif",marginTop:"5vh",textSizeAdjust:"none"}}>
                   {tutorialSteps[activeStep].imgdef}
                   <br />
                   <br />
