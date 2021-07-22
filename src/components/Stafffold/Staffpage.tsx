@@ -16,7 +16,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import logo from '../../Mediafold/person.jpg';
 import "./staff.css";
 import { apiurl } from '../../varconfig';
-import Rajpath from "../../Mediafold/rajpath.jpg";
+import Triangle from "../../Mediafold/triangle.svg";
 
 interface StaffDetails {
   id: number;
@@ -207,7 +207,7 @@ function Impfunction(dataFull: topass) {
           marginTop: isTwo ? "80px" : "0px",
         }}
       >
-          <img height="100%" width="100%" src={Rajpath} alt="staff dept img"></img>
+          <img height="100%" width="100%" src={Triangle} alt="staff dept img"></img>
       </Container>
     </Container>
   );

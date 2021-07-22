@@ -21,7 +21,7 @@ import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import logo from '../../Mediafold/person.jpg';
 import "./faculty.css";
 import { apiurl } from '../../varconfig';
-import Rajpath from "../../Mediafold/rajpath.jpg";
+import Triangle from "../../Mediafold/triangle.svg";
 
 interface FacultyDetails {
   id: number;
@@ -357,7 +357,7 @@ function Impfunction(dataFull: topass) {
       >
         {
           (rightImg) ? (
-            <img height="100%" width="100%" src={Rajpath} alt="faculty dept img"></img>
+            <img height="100%" width="100%" src={Triangle} alt="faculty dept img"></img>
           ):(
             dataFull.details.map((item1) => {
               if (item1.id === rId){
