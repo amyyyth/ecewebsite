@@ -103,72 +103,100 @@ function RightCard(faculty: FacultyDetails) {
     }
   }
 
-  return (
-  <Card variant="outlined" style={{fontFamily: "Karla,sans-serif",}}>
-    <CardContent>
-      <div style={{display:"flex",flexDirection:"column",alignItems:"center", marginBottom:"20px",marginTop:"15px"}}>
-      <Typography variant="h4" style={{fontFamily: "Montserrat,sans-serif", fontWeight:"bolder"}}> {faculty.display_name} </Typography>
-      <Typography variant="h5" > {faculty.designation} </Typography>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          marginBottom:"15px"
-        }}
-      >
-        {faculty.profile_pic===""?
-            <CardMedia><img src={logo} style={{ height: "125px" }} alt={"Faculty"} /></CardMedia>
-            :
-            <CardMedia><img src={faculty.profile_pic} style={{ width: "125px" }} alt={"Faculty"} /></CardMedia>}
-      </div>
-      <TableContainer>
-        <Table aria-label="simple table">
-          <TableBody>
-            <TableRow>
-              <TableCell component="th" scope="row">
-                <Typography variant="h6"> Room </Typography>
-              </TableCell>
-              <TableCell align="left">
-                {" "}
-                <Typography variant="h6" > {faculty.room} </Typography>
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell component="th" scope="row">
-                <Typography variant="h6"> Email </Typography>
-              </TableCell>
-              <TableCell align="left">
-                {" "}
-                <a href={"mailto:"+faculty.email}><Typography variant="h6" style={{fontWeight:"bold",color:"#26a69a"}}> {faculty.email} </Typography></a>
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell component="th" scope="row">
-                <Typography variant="h6"> Phone </Typography>
-              </TableCell>
-              <TableCell align="left">
-                {" "}
-                <Typography variant="h6" style={{fontWeight:"bold"}}> {faculty.phone} </Typography>
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell component="th" scope="row">
-                <Typography variant="h6"> Areas of Interest </Typography>
-              </TableCell>
-              <TableCell align="left">
-                {" "}
-                <Typography variant="h6" > {faculty.aoi} </Typography>
-              </TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
-      </TableContainer>
-      {showcards(faculty.cards)}
-    </CardContent>
-  </Card>
-  );
+  if(faculty){
+    return (
+      <Card variant="outlined" style={{fontFamily: "Karla,sans-serif",}}>
+        <CardContent>
+          <div style={{display:"flex",flexDirection:"column",alignItems:"center", marginBottom:"20px",marginTop:"15px"}}>
+          <Typography variant="h4" style={{fontFamily: "Montserrat,sans-serif", fontWeight:"bolder"}}> {faculty.display_name} </Typography>
+          <Typography variant="h5" > {faculty.designation} </Typography>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              marginBottom:"15px"
+            }}
+          >
+            {faculty.profile_pic===""?
+                <CardMedia><img src={logo} style={{ height: "125px" }} alt={"Faculty"} /></CardMedia>
+                :
+                <CardMedia><img src={faculty.profile_pic} style={{ width: "125px" }} alt={"Faculty"} /></CardMedia>}
+          </div>
+          <TableContainer>
+            <Table aria-label="simple table">
+              <TableBody>
+                <TableRow>
+                  <TableCell component="th" scope="row">
+                    <Typography variant="h6"> Room </Typography>
+                  </TableCell>
+                  <TableCell align="left">
+                    {" "}
+                    <Typography variant="h6" > {faculty.room} </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell component="th" scope="row">
+                    <Typography variant="h6"> Email </Typography>
+                  </TableCell>
+                  <TableCell align="left">
+                    {" "}
+                    <a href={"mailto:"+faculty.email}><Typography variant="h6" style={{fontWeight:"bold",color:"#26a69a"}}> {faculty.email} </Typography></a>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell component="th" scope="row">
+                    <Typography variant="h6"> Phone </Typography>
+                  </TableCell>
+                  <TableCell align="left">
+                    {" "}
+                    <Typography variant="h6" style={{fontWeight:"bold"}}> {faculty.phone} </Typography>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell component="th" scope="row">
+                    <Typography variant="h6"> Areas of Interest </Typography>
+                  </TableCell>
+                  <TableCell align="left">
+                    {" "}
+                    <Typography variant="h6" > {faculty.aoi} </Typography>
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </TableContainer>
+          {showcards(faculty.cards)}
+        </CardContent>
+      </Card>
+      
+    );
+  }
+  else{
+    return(
+      <Card variant="outlined" style={{fontFamily: "Karla,sans-serif",}}>
+        <CardContent>
+        <div
+            style={{
+              display: "flex",
+              flexDirection: 'column',
+              alignItems: "center",
+              justifyContent: "center",
+              marginBottom:"15px"
+            }}
+          >
+            <div style={{width: '200px'}}>
+              <img src="https://upload.wikimedia.org/wikipedia/en/d/d0/National_Institute_of_Technology%2C_Calicut_Logo.png"/>
+            </div>
+            <div>
+            <Typography variant="h4" style={{fontFamily: "Montserrat,sans-serif", fontWeight:"bolder"}}> Faculty Details </Typography>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    )
+  }
+
 }
 
 function LeftTabCard(faculty: FacultyDetails) {
@@ -357,7 +385,29 @@ function Impfunction(dataFull: topass) {
       >
         {
           (rightImg) ? (
-            <img height="100%" width="100%" src={Triangle} alt="faculty dept img"></img>
+            // <img height="100%" width="100%" src={Triangle} alt="faculty dept img"></img>
+            <Card variant='outlined' style={{fontFamily: "Karla,sans-serif",}}>
+                <CardContent>
+                <div
+                    style={{
+                      display: "flex",
+                      flexDirection: 'column',
+                      alignItems: "center",
+                      justifyContent: "center",
+                      marginBottom:"15px",
+                      paddingTop: '30px',
+                      paddingBottom: '30px'
+                    }}
+                  >
+                    <div style={{width: '200px', marginBottom: '50px'}}>
+                      <img style={{width: '100%'}} src="https://upload.wikimedia.org/wikipedia/en/d/d0/National_Institute_of_Technology%2C_Calicut_Logo.png"/>
+                    </div>
+                    <div>
+                    <Typography variant="h4" style={{fontFamily: "Montserrat,sans-serif", fontWeight:"bolder"}}> Faculty Details </Typography>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
           ):(
             dataFull.details.map((item1) => {
               if (item1.id === rId){
